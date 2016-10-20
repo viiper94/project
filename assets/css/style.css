@@ -1,1 +1,96 @@
-1
+*{margin: 0; padding: 0; font-family: Arial; outline: none;}
+body{background-color: #252525;}
+ul{list-style: none;}
+.wrapper{max-width: 1920px; margin: 0 auto;}
+
+/* header */
+header{height: 260px; background-image: url(../img/header1.jpg); background-position: right; position: relative;}
+
+	/* navbar */
+.navbar-default{position: absolute; bottom: 0; width: 100%; background-color: rgba(0, 0, 0, 0.7); margin-bottom: 0; 
+	border: none;}
+.nav-container{margin: 0 auto; width: 1026px;}
+.logo{margin-right: 10px;}
+.logo img{height: 45px;}
+
+	/* list */
+.navbar-default .navbar-nav li a{color: #fff; background-color: inherit; transition: 0.4s background-color;}
+.navbar-default .navbar-nav .active a{box-shadow: inset 0px 0px 0px 3px #d20023; background-color: inherit; 
+	color: #fff; transition: 0.5s background-color;}
+.navbar-default .navbar-nav li a:hover{background-color: #d20023; color: #fff; transition: 0.4s background-color;}
+.navbar-default .navbar-nav .active a:hover{background-color: #d20023; color: #fff;}
+
+	/* search */
+.search-box{display: inline-block; width: 260px; line-height: 45px; position: relative; margin-left: 35px;}
+.search-box input, .search-box button{vertical-align: middle; height: 25px;}
+.search-box input{background-color: #000; width: 100%; border: none; border-bottom: solid 1px #6f6f6f; 
+	color: #fff; transition: 0.5s border-color;}
+.search-box input:focus{border-color: #d20023;}
+.search-box button{position: absolute; top: 0; right: 0; width: 30px; height: 30px; background-color: #000; 
+	border: none; cursor: pointer; color: #fff; transition: 0.5s color;}
+.search-box button:hover{color: #d20023; }
+
+/* releases, artists content */
+.item{display: inline-block; position: relative; width: 25%; height: 260px; overflow: hidden; background-size: cover; 
+	background-position: center 0; background-repeat: no-repeat; float: left;}
+.item .overlay{width: 100%; height: 100%; background-color: rgba(200, 0, 0, 0); transition: 0.5s background-color;}
+.item .overlay:hover{background-color: rgba(200, 0, 0, 0.3);}
+.item .overlay .title{position: absolute; width: 100%; bottom: 15px; text-shadow: 0 1px 3px rgba(0, 0, 0, 1);
+	font-weight: bold; transform: translate(0, 0); transition: 0.4s transform; text-align: center; color: #fff; }
+.item .overlay:hover .title{transform: translate(0, -50px);}
+
+/* main */
+.item-block{display: block; float: none; width: 100%; background-position: center center;}
+.overlay .date{float: right; margin: 15px; color: #fff; transform: translate(0, 0); transition: 0.4s transform;
+	text-shadow: 0 1px 3px rgba(0, 0, 0, 1);}
+.overlay:hover .date{transform: translate(0, 20px);}
+.item-block .title{font-size: 20px; max-width: 80%; margin: 0 10%;}
+
+/* news, artist */
+.news-container{color: #fff; margin: 0 0 10px 0; width: 51%; margin: 0 auto;}
+figure{overflow: hidden; margin: 0 auto;}
+figure img{width: 100%;}
+section{ margin-top: 10px; text-align: justify;}
+.related{margin: 25px 0;}
+.related-item{width: 33%; height: 150px; float: left; background-position: center; margin-top: 10px;}
+
+/* sharers */
+.sharers{height: 50px; margin: 20px 0;}
+.sharers a{display: inline-block; width: 50px; height: 50px; opacity: 0.8; transition: 0.3s opacity;
+	background: url(../img/sharers-icons.png) no-repeat; margin-right: 10px;}
+.sharers a:hover{opacity: 1;}
+.sharers .share-fb{background-position: -50px;}
+.sharers .share-twitter{background-position: -100px;}
+.sharers .share-vk{background-position: 0px;}
+.sharers .share-mail{background-position: -150px;}
+
+/* pagination */
+.paginations{margin: 20px auto; max-width: 400px; font-size: 20px;}
+.paginations a{color: #fff; transition: 0.3s color; text-decoration: none;}
+.paginations a:hover{color: #d20023; transition: 0.3s color;}
+.pgn{display: inline-block; padding: 0 10px;}
+.pgn-current{font-weight: bold;}
+
+/* footer */
+footer{height: 150px; width: 1026px; margin: 0 auto; color: #fff; padding: 30px 15px; border-top: solid #fff 1px;}
+.partners{display: inline-block; width: 400px;}
+.partners a{margin: 0 10px; opacity: 0.7; transition: 0.3s opacity;}
+.partners a:hover{opacity: 1;}
+.partners img{height: 40px;}
+.partners p{margin-left: 10px; font-size: 12px;}
+.copyright{margin: 20px 10px;}
+.copyright p{font-size: 15px;}
+
+	/* social links */
+.links{display: inline-block; float: right;}
+.links p{margin-bottom: 17px; font-size: 12px;}
+.social-link{display: inline-block; width: 33px; height: 33px; margin: 0 1px; overflow: hidden; 
+	background: url(../img/socials.png) no-repeat; transition: 0.3s background-color;}
+.social-link:hover{background-color: #d20023;}
+.fb{background-position: 0px -33px}
+.youtube{background-position: -33px -33px}
+.vk{background-position: -66px -33px}
+.soundcloud{background-position: -99px -33px}
+.lastfm{background-position: -132px -33px}
+.twitter{background-position: -165px -33px}
+.instagram{background-position: -198px -33px}
