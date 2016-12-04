@@ -1,0 +1,191 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<component name="dataSourceStorage">
+  <data-source name="MySQL - viiper94@localhost" uuid="2821d3ad-11ce-419c-8003-9e606cae698e">
+    <database-info product="MySQL" version="5.7.16-log" jdbc-version="4.0" driver-name="MySQL Connector Java" driver-version="mysql-connector-java-5.1.35 ( Revision: 5fb9c5849535c13917c2cf9baaece6ef9693ef27 )">
+      <extra-name-characters>#@</extra-name-characters>
+      <identifier-quote-string>`</identifier-quote-string>
+    </database-info>
+    <case-sensitivity plain-identifiers="lower" quoted-identifiers="lower"/>
+    <database-model serializer="dbm" rdbms="MYSQL" format-version="2.5">
+      <schema id="1" name="viiper94"/>
+      <table id="2" parent="1" name="about"/>
+      <table id="3" parent="1" name="artists"/>
+      <table id="4" parent="1" name="news"/>
+      <table id="5" parent="1" name="releases"/>
+      <table id="6" parent="1" name="subscribers"/>
+      <column id="7" parent="2" name="id">
+        <mandatory>1</mandatory>
+        <data-type>int(11)</data-type>
+        <sequence-identity>1</sequence-identity>
+      </column>
+      <column id="8" parent="2" name="text">
+        <data-type>varchar(20000)</data-type>
+      </column>
+      <column id="9" parent="2" name="category">
+        <mandatory>1</mandatory>
+        <data-type>varchar(11)</data-type>
+      </column>
+      <key id="10" parent="2" name="PRIMARY">
+        <columns>id</columns>
+        <primary>1</primary>
+      </key>
+      <column id="11" parent="3" name="artist_id">
+        <mandatory>1</mandatory>
+        <data-type>int(11)</data-type>
+        <sequence-identity>1</sequence-identity>
+      </column>
+      <column id="12" parent="3" name="artist_name">
+        <mandatory>1</mandatory>
+        <data-type>varchar(100)</data-type>
+      </column>
+      <column id="13" parent="3" name="artist_bio">
+        <data-type>varchar(5000)</data-type>
+      </column>
+      <column id="14" parent="3" name="artist_related">
+        <data-type>varchar(100)</data-type>
+      </column>
+      <column id="15" parent="3" name="artist_picture">
+        <data-type>varchar(100)</data-type>
+      </column>
+      <column id="16" parent="3" name="sort">
+        <data-type>int(11)</data-type>
+      </column>
+      <key id="17" parent="3" name="PRIMARY">
+        <columns>artist_id</columns>
+        <primary>1</primary>
+      </key>
+      <column id="18" parent="4" name="news_id">
+        <mandatory>1</mandatory>
+        <data-type>int(11)</data-type>
+        <sequence-identity>1</sequence-identity>
+      </column>
+      <column id="19" parent="4" name="news_title">
+        <mandatory>1</mandatory>
+        <data-type>varchar(100)</data-type>
+      </column>
+      <column id="20" parent="4" name="news_article">
+        <data-type>varchar(20000)</data-type>
+      </column>
+      <column id="21" parent="4" name="news_date">
+        <data-type>date</data-type>
+      </column>
+      <column id="22" parent="4" name="news_title_picture">
+        <data-type>varchar(11)</data-type>
+      </column>
+      <column id="23" parent="4" name="news_related">
+        <data-type>varchar(1000)</data-type>
+      </column>
+      <column id="24" parent="4" name="sort">
+        <data-type>int(11)</data-type>
+      </column>
+      <index id="25" parent="4" name="news_id">
+        <columns>news_id</columns>
+        <desc-columns></desc-columns>
+        <unique>1</unique>
+      </index>
+      <key id="26" parent="4" name="news_id">
+        <columns>news_id</columns>
+        <underlying-index>news_id</underlying-index>
+      </key>
+      <key id="27" parent="4" name="PRIMARY">
+        <columns>news_id</columns>
+        <primary>1</primary>
+      </key>
+      <column id="28" parent="5" name="releases_id">
+        <mandatory>1</mandatory>
+        <data-type>int(11)</data-type>
+        <sequence-identity>1</sequence-identity>
+      </column>
+      <column id="29" parent="5" name="release_artist">
+        <data-type>varchar(100)</data-type>
+      </column>
+      <column id="30" parent="5" name="release_title">
+        <mandatory>1</mandatory>
+        <data-type>varchar(100)</data-type>
+      </column>
+      <column id="31" parent="5" name="release_cover">
+        <data-type>varchar(11)</data-type>
+      </column>
+      <column id="32" parent="5" name="release_number">
+        <data-type>varchar(100)</data-type>
+      </column>
+      <column id="33" parent="5" name="release_date">
+        <data-type>date</data-type>
+      </column>
+      <column id="34" parent="5" name="release_description">
+        <data-type>varchar(2000)</data-type>
+      </column>
+      <column id="35" parent="5" name="release_tracklist">
+        <data-type>varchar(2000)</data-type>
+      </column>
+      <column id="36" parent="5" name="release_itunes">
+        <data-type>varchar(1000)</data-type>
+      </column>
+      <column id="37" parent="5" name="release_gplay">
+        <data-type>varchar(1000)</data-type>
+      </column>
+      <column id="38" parent="5" name="release_spotify">
+        <data-type>varchar(1000)</data-type>
+      </column>
+      <column id="39" parent="5" name="release_deezer">
+        <data-type>varchar(1000)</data-type>
+      </column>
+      <column id="40" parent="5" name="release_related">
+        <data-type>varchar(1000)</data-type>
+      </column>
+      <column id="41" parent="5" name="sort">
+        <data-type>int(11)</data-type>
+      </column>
+      <index id="42" parent="5" name="releases_id">
+        <columns>releases_id</columns>
+        <desc-columns></desc-columns>
+        <unique>1</unique>
+      </index>
+      <key id="43" parent="5" name="PRIMARY">
+        <columns>releases_id</columns>
+        <primary>1</primary>
+      </key>
+      <key id="44" parent="5" name="releases_id">
+        <columns>releases_id</columns>
+        <underlying-index>releases_id</underlying-index>
+      </key>
+      <column id="45" parent="6" name="subscriber_id">
+        <mandatory>1</mandatory>
+        <data-type>int(11)</data-type>
+        <sequence-identity>1</sequence-identity>
+      </column>
+      <column id="46" parent="6" name="subscriber_name">
+        <data-type>varchar(50)</data-type>
+      </column>
+      <column id="47" parent="6" name="subscriber_email">
+        <mandatory>1</mandatory>
+        <data-type>varchar(20)</data-type>
+      </column>
+      <column id="48" parent="6" name="subscriber_date">
+        <data-type>date</data-type>
+      </column>
+      <index id="49" parent="6" name="subscriber_email">
+        <columns>subscriber_email</columns>
+        <desc-columns></desc-columns>
+        <unique>1</unique>
+      </index>
+      <index id="50" parent="6" name="subscriber_id">
+        <columns>subscriber_id</columns>
+        <desc-columns></desc-columns>
+        <unique>1</unique>
+      </index>
+      <key id="51" parent="6" name="PRIMARY">
+        <columns>subscriber_id</columns>
+        <primary>1</primary>
+      </key>
+      <key id="52" parent="6" name="subscriber_email">
+        <columns>subscriber_email</columns>
+        <underlying-index>subscriber_email</underlying-index>
+      </key>
+      <key id="53" parent="6" name="subscriber_id">
+        <columns>subscriber_id</columns>
+        <underlying-index>subscriber_id</underlying-index>
+      </key>
+    </database-model>
+  </data-source>
+</component>

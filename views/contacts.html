@@ -1,0 +1,19 @@
+{%extends 'index.html'%}
+{% block content %}
+<div class="news-container">
+	<p class="about">Контакти Damage Records</p>
+    <article>
+        {{ text.text|raw }}
+    </article>
+	<p>Якщо ви хочете зв'язатися з нами, ви можете використати форму нижче. Заповніть його повністю і натисніть кнопку Надіслати. Ми намагаємося читати кожен лист електронної пошти, що відправляється нам, і відповідаємо на більшість з них. Конкретні питання, більш імовірно, отримають відповідь швидше, ніж загальні питання.</p>
+	<div class="contact-form">
+		<form action="#" method="POST">
+			<input type="text" name="first-name" placeholder="Ім'я">
+			<input type="text" name="second-name" placeholder="Прізвище">
+			<input type="email" name="email" placeholder="E-Mail">
+			<textarea name="message" cols="30" rows="10" placeholder="Повідомлення"></textarea>
+			<button type="submit">Відправити</button>
+		</form>
+	</div>
+</div>
+{% endblock %}

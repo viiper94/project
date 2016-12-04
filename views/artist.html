@@ -1,0 +1,35 @@
+{%extends 'index.html'%}
+{% block content %}
+<div class="news-container">
+	<figure>
+		<img src="/images/artists/{{ artist.artist_picture }}">
+	</figure>
+	<article>
+		<span>{{ artist.artist_bio|raw }}</span>
+	</article>
+	<div class="sharers">
+		<a href="#" class="share-fb"></a>
+		<a href="#" class="share-twitter"></a>
+		<a href="#" class="share-vk"></a>
+		<a href="#" class="share-mail"></a>
+	</div>
+    {% if related is not empty %}
+	<div class="related">
+		<span>Схожі артисти:</span>
+		<div class="clearfix"></div>
+        {% for item in related %}
+		<div class="item related-item" style="background-image: url(/images/artists/{{ item.artist_picture }});">
+			<a href="/artists/{{ item.artist_id }}">
+				<div class="overlay">
+					<div class="title">
+						<span>{{ item.artist_name }}</span>
+					</div>
+				</div>
+			</a>
+		</div>
+		{% endfor %}
+		<div class="clearfix"></div>
+	</div>
+    {% endif %}
+</div>
+{% endblock %}

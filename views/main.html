@@ -1,0 +1,23 @@
+{%extends 'index.html'%}
+{% block content %}
+{% for item in news %}
+<div class="item item-block" style="background-image: url(./images/news/{{ item.news_title_picture }});">
+	<a href="/news/{{ item.news_id }}">
+		<div class="overlay">
+			<div class="date">
+				<span>{{ item.news_date }}</span>
+			</div>
+			<div class="title">
+				<span>{{ item.news_title }}</span>
+			</div>
+		</div>
+	</a>
+</div>
+{% endfor %}
+<div class="clearfix"></div>
+{% if pgn.total_pages > 1 %}
+<div class="paginations text-center row">
+    {% include 'pagination.html' %}
+</div>
+{% endif %}
+{% endblock %}

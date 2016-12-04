@@ -1,0 +1,14 @@
+{%extends 'index.html'%}
+{% block content %}
+<form action="/admin/{{ page.category }}/save" method="POST">
+	<div class="form-group">
+		<label>Текст сторінки</label>
+		<textarea name="text" id="about" required>{{ page.text }}</textarea>
+	</div>
+	<input type="submit" name="save_page" class="btn btn-primary" value="Зберегти">
+</form>
+<script type="text/javascript" src="/admin/ck-editor/ckeditor.js"></script>
+<script type="text/javascript">
+    CKEDITOR.replace('about');
+</script>
+{% endblock %}

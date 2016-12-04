@@ -1,0 +1,64 @@
+{%extends 'index.html'%}
+{% block content %}
+{% if news %}
+<h3 class="search-header">Знайдені новини:</h3>
+{% for item in news %}
+<div class="item item-block" style="background-image: url(/images/news/{{ item.news_title_picture }});">
+	<a href="/news/{{ item.news_id }}">
+		<div class="overlay">
+			<div class="date">
+				<span>{{ item.news_date }}</span>
+			</div>
+			<div class="title">
+				<span>{{ item.news_title }}</span>
+			</div>
+		</div>
+	</a>
+</div>
+{% endfor %}
+<div class="clearfix"></div>
+{% endif %}
+{% if releases.title or releases.artist %}
+<h3 class="search-header">Знайдені релізи:</h3>
+{% for item in releases.title %}
+<div class="item" style="background-image: url(/images/releases/{{ item.release_cover }});">
+    <a href="/releases/{{ item.releases_id }}">
+        <div class="overlay">
+            <div class="title">
+                <h4>{{ item.release_artist }}</h4>
+                <h3>{{ item.release_title }}</h3>
+            </div>
+        </div>
+    </a>
+</div>
+{% endfor %}
+{% for item in releases.artist %}
+<div class="item" style="background-image: url(/images/releases/{{ item.release_cover }});">
+    <a href="/releases/{{ item.releases_id }}">
+        <div class="overlay">
+            <div class="title">
+                <h4>{{ item.release_artist }}</h4>
+                <h3>{{ item.release_title }}</h3>
+            </div>
+        </div>
+    </a>
+</div>
+{% endfor %}
+<div class="clearfix"></div>
+{% endif %}
+{% if artists %}
+<h3 class="search-header">Знайдені артисти:</h3>
+{% for artist in artists %}
+<div class="item" style="background-image: url(/images/artists/{{ artist.artist_picture }});">
+    <a href="/artists/{{ artist.artist_id }}">
+        <div class="overlay">
+            <div class="title">
+                <h3>{{ artist.artist_name }}</h3>
+            </div>
+        </div>
+    </a>
+</div>
+{% endfor %}
+<div class="clearfix"></div>
+{% endif %}
+{% endblock %}

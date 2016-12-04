@@ -1,0 +1,55 @@
+{%extends 'index.html'%}
+{% block content %}
+<form action="/admin/artists/" method="POST" enctype="multipart/form-data" class="form-horizontal">
+    <div class="form-group">
+        <button type="submit" name="edit_artist" class="btn btn-primary">
+            <span class="glyphicon glyphicon glyphicon-floppy-disk"></span> Зберегти артиста
+        </button>
+    </div>
+    <div class="form-group">
+        <label class="control-label">Зображення</label>
+        <img src="/images/artists/{{ artists.artist_picture }}" class="img-responsive" width="300px">
+        <input type="hidden" name="MAX_FILE_SIZE" value="30000000">
+        <input type="file" accept="image/jpeg, image/png" name="picture">
+    </div>
+    <div class="form-group">
+        <label for="name" class="control-label">Ім'я артиста/гурту</label>
+        <input type="text" name="name" id="name" class="form-control" value="{{ artists.artist_name }}" required>
+    </div>
+    <div class="form-group">
+        <label for="text" class="control-label">Про артиста</label>
+        <textarea id="text" name="text">{{ artists.artist_bio }}</textarea>
+    </div>
+    <div class="row">
+        <h3>Схожі артисти</h3>
+        <div class="col-md-7 form-group">
+            <h4>Всі артисти</h4>
+            <button class="btn btn-danger" id="deselect-btn">
+                <span class="glyphicon glyphicon-ban-circle"></span> Зняти обрані
+            </button>
+            {% for item in related %}
+            <div class="checkbox">
+                <label>
+                    <input type="checkbox" name="related[]" value="{{ item.artist_id }}"{% if item.artist_id in artists.artist_related %} checked{% endif %}> {{ item.artist_name }}
+                </label>
+            </div>
+            {% endfor %}
+        </div>
+        <div class="col-md-5">
+            <h4>Пошук артистів</h4>
+            <input type="text" class="form-control" id="search" placeholder="Шукати артиста">
+            <div class="item-list"></div>
+        </div>
+    </div>
+    <div class="form-group">
+        <input type="hidden" value="{{ artists.artist_id }}" name="id">
+        <button type="submit" name="edit_artist" class="btn btn-primary">
+            <span class="glyphicon glyphicon glyphicon-floppy-disk"></span> Зберегти артиста
+        </button>
+    </div>
+</form>
+<script type="text/javascript" src="/admin/ck-editor/ckeditor.js"></script>
+<script type="text/javascript">
+    CKEDITOR.replace('text');
+</script>
+{% endblock %}

@@ -1,0 +1,49 @@
+{%extends 'index.html'%}
+{% block content %}
+<form action="/admin/news" method="POST" enctype="multipart/form-data" class="form-horizontal">
+    <div class="form-group">
+        <input type="submit" value="Зберегти новину" name="edit_news" class="btn btn-primary">
+    </div>
+    <div class="form-group">
+        <label class="control-label">Зображення</label>
+        <img src="/images/news/{{ news.news_title_picture }}" class="img-responsive" width="300px">
+        <input type="hidden" name="MAX_FILE_SIZE" value="30000000">
+        <input type="file" accept="image/jpeg, image/png" name="picture">
+    </div>
+    <div class="form-group">
+        <label for="title" class="control-label">Заголовок</label>
+        <input type="text" name="title" id="title" class="form-control" value="{{ news.news_title }}" required>
+    </div>
+    <div class="form-group">
+        <label for="text" class="control-label">Текст</label>
+        <textarea id="text" name="text" required>{{ news.news_article }}</textarea>
+    </div>
+    <div class="row">
+        <h3>Схожі новини</h3>
+        <div class="col-md-7 form-group">
+            <h4>Всі новини</h4>
+            <button class="btn btn-danger" id="deselect-btn">Зняти обрані</button>
+            {% for i, item in related %}
+            <div class="checkbox">
+                <label>
+                    <input type="checkbox" name="related[]" value="{{ item.news_id }}"{% if item.news_id in news.news_related %} checked{% endif %}> {{ item.news_title }}
+                </label>
+             </div>
+            {% endfor %}
+        </div>
+        <div class="col-md-5">
+            <h4>Пошук новин</h4>
+            <input type="text" class="form-control" id="search" placeholder="Шукати новину">
+            <div class="item-list"></div>
+        </div>
+    </div>
+    <div class="form-group">
+        <input type="hidden" value="{{ news.news_id }}" name="id" class="btn btn-primary">
+        <input type="submit" value="Зберегти новину" name="edit_news" class="btn btn-primary">
+    </div>
+</form>
+<script type="text/javascript" src="/admin/ck-editor/ckeditor.js"></script>
+<script type="text/javascript">
+    CKEDITOR.replace('text');
+</script>
+{% endblock %}

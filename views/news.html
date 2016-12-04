@@ -1,0 +1,36 @@
+{%extends 'index.html'%}
+{% block content %}
+<div class="news-container">
+    <h2>{{ item.news_title }}</h2>
+	<figure>
+		<img src="/images/news/{{ item.news_title_picture }}">
+	</figure>
+	<article>
+		<span>{{ item.news_article|raw }}</span>
+	</article>
+	<div class="sharers">
+		<a href="#" class="share-fb"></a>
+		<a href="#" class="share-twitter"></a>
+		<a href="#" class="share-vk"></a>
+		<a href="#" class="share-mail"></a>
+	</div>
+    {% if related is not empty %}
+        <div class="related">
+            <span>Схожі новини:</span>
+            <div class="clearfix"></div>
+            {% for item in related %}
+            <div class="item related-item" style="background-image: url(/images/news/{{ item.news_title_picture }});">
+                <a href="/news/{{ item.news_id }}">
+                    <div class="overlay">
+                        <div class="title">
+                            <span>{{ item.news_title }}</span>
+                        </div>
+                    </div>
+                </a>
+            </div>
+            {% endfor %}
+            <div class="clearfix"></div>
+        </div>
+    {% endif %}
+</div>
+{% endblock %}

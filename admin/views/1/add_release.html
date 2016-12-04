@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<link rel="stylesheet" href="../../bootstrap/css/bootstrap.min.css">
+	<link rel="stylesheet" href="../../css/style.css">
+	<script src="../../js/jquery-3.1.1.min.js"></script>
+	<script src="../../bootstrap/js/bootstrap.min.js"></script>
+	<title>Панель керування</title>
+</head>
+<body>
+	<nav class="navbar navbar-default">
+	  	<div class="container-fluid">
+	   		<div class="navbar-header">
+	      		<button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar-collapse-1" 
+	      		aria-expanded="false">
+			        <span class="sr-only">Розкрити меню</span>
+			        <span class="icon-bar"></span>
+			        <span class="icon-bar"></span>
+			        <span class="icon-bar"></span>
+		      	</button>
+	      		<a href="/admin/"><img src="../../../assets/img/damage-logo-sign-600.png" style="height: 50px"></a>
+	    	</div>
+	    	<div class="collapse navbar-collapse" id="navbar-collapse-1">
+	      		<ul class="nav navbar-nav">
+		        	<li class="active"><a href="/admin">НОВИНИ</a></li>
+		        	<li><a href="/admin/releases">РЕЛІЗИ</a></li>
+		       		<li><a href="/admin/artists">АРТИСТИ</a></li>
+		        	<li><a href="/admin/about">ПРО DAMAGE</a></li>
+		        	<li><a href="/admin/contacts">КОНТАКТИ</a></li>
+	      		</ul>
+	    	</div>
+		</div>
+	</nav>
+	<main>
+		<form action="#" method="POST" enctype="multipart/form-data" class="form-horizontal">
+			<div class="form-group">
+				<input type="submit" value="Додати реліз" name="add_release" class="btn btn-primary">
+			</div>
+			<div class="form-group">
+				<label for="title" class="control-label">Назва</label>
+				<input type="text" name="title" id="title" class="form-control" required>
+			</div>
+			<div class="form-group">
+				<label for="artist" class="control-label">Артист</label>
+				<input type="text" name="artist" id="artist" class="form-control">
+			</div>
+			<div class="form-group">
+				<div class="col-md-4">
+					<label for="picture" class="control-label" style="margin-left: -15px;">Обкладинка</label>
+					<input type="hidden" name="MAX_FILE_SIZE" value="30000000">
+					<input type="file" accept="image/jpeg, image/png" name="picture" style="margin-left: -15px;"" required>
+				</div>
+				<div class="col-md-4">
+					<label for="date" class="control-label">Дата релізу</label>
+					<input type="date" name="date" id="date" class="form-control">
+				</div>				
+				<div class="col-md-4">
+					<label for="number" class="control-label">Номер релізу</label>
+					<input type="text" name="number" id="number" class="form-control">
+				</div>
+			</div>			
+			<div class="form-group">
+				<label for="itunes" class="control-label">Лінк на iTunes</label>
+				<input type="text" name="itunes" id="itunes" class="form-control">
+			</div>
+			<div class="form-group">
+				<label for="gplay" class="control-label">Лінк на Google Play</label>
+				<input type="text" name="gplay" id="gplay" class="form-control">
+			</div>
+			<div class="form-group">
+				<label for="spotify" class="control-label">Лінк на Spotify</label>
+				<input type="text" name="spotify" id="spotify" class="form-control">
+			</div>
+			<div class="form-group">
+				<label for="deezer" class="control-label">Лінк на Deezer</label>
+				<input type="text" name="deezer" id="deezer" class="form-control">
+			</div>
+			<div class="form-group">
+				<label for="description" class="control-label">Опис релізу</label>
+				<textarea id="description" name="description" class="form-control"></textarea>
+			</div>
+			<div class="form-group">
+				<label for="tracklist" class="control-label">Трекліст</label>
+				<textarea id="tracklist" name="tracklist" class="form-control"></textarea>
+			</div>
+			<div class="row">
+				<h3>Схожі релізи</h3>
+				<div class="col-md-7 form-group">
+					<h4>Всі релізи</h4>
+					<button class="btn btn-danger" id="deselect-btn">Зняти обрані</button>
+					<div class="checkbox">
+					    <label>
+					      	<input type="checkbox" name="related" value="1"> Реліз 1
+					    </label>
+					 </div>
+					<div class="checkbox">
+					    <label>
+					      	<input type="checkbox" name="related" value="2"> Реліз 2
+					    </label>
+					 </div>
+					<div class="checkbox">
+					    <label>
+					      	<input type="checkbox" name="related" value="3"> Реліз 3
+					    </label>
+					 </div>
+				</div>
+				<div class="col-md-5">
+					<h4>Пошук релізу</h4>
+					<input type="text" class="form-control" id="search" placeholder="Шукати реліз">
+					<div class="item-list"></div>
+				</div>
+			</div>
+			<div class="form-group">
+				<input type="submit" value="Додати реліз" name="add_release" class="btn btn-primary">
+			</div>
+		</form>
+	</main>
+	<script type="text/javascript" src="../../ck-editor/ckeditor.js"></script>
+	<script type="text/javascript">
+		CKEDITOR.replace('description');	
+	</script>
+	<script type="text/javascript">
+		CKEDITOR.replace('tracklist');	
+	</script>
+</body>
+</html>

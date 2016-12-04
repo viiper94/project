@@ -1,0 +1,20 @@
+{%extends 'index.html'%}
+{% block content %}
+{% for artist in artists %}
+<div class="item" style="background-image: url(/images/artists/{{ artist.artist_picture }});">
+	<a href="/artists/{{ artist.artist_id }}">
+		<div class="overlay">
+			<div class="title">
+				<h3>{{ artist.artist_name }}</h3>
+			</div>
+		</div>
+	</a>
+</div>
+{% endfor %}
+<div class="clearfix"></div>
+{% if pgn.total_pages > 1 %}
+<div class="paginations text-center row">
+    {% include 'pagination.html' %}
+</div>
+{% endif %}
+{% endblock %}

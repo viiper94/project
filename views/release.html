@@ -1,0 +1,60 @@
+{%extends 'index.html'%}
+{% block content %}
+<div class="release-container">
+	<div class="left pull-left">
+		<div class="release-info">
+			<p class="artist">{{ item.release_artist }}</p>
+			<p class="title">{{ item.release_title }}</p>
+		</div>
+		<div class="release-cover">
+			<img src="/images/releases/{{ item.release_cover }}" class="img-responsive">
+		</div>
+		<div class="release-listen">
+			<p>Listen and download:</p>
+			<a href="{{ item.release_itunes }}" class="itunes" target="_blank"></a>
+			<a href="{{ item.release_gplay }}" class="gplay" target="_blank"></a>
+			<a href="{{ item.release_spotify }}" class="spotify" target="_blank"></a>
+			<a href="{{ item.release_deezer }}" class="deezer" target="_blank"></a>
+		</div>
+		<div class="sharers">
+			<p>Share:</p>
+			<a href="#" class="share-fb"></a>
+			<a href="#" class="share-twitter"></a>
+			<a href="#" class="share-vk"></a>
+			<a href="#" class="share-mail"></a>
+		</div>
+	</div>
+	<div class="right pull-right">
+		<div class="release-nav text-center">
+			<a {% if prev is not empty %}href="/releases/{{ prev.releases_id }}"{% endif %} class="glyphicon glyphicon-menu-left{% if prev.releases_id is empty %} disabled{% endif %}"></a>
+			<span>Search releases</span>
+			<a {% if next is not empty %}href="/releases/{{ next.releases_id }}"{% endif %}  class="glyphicon glyphicon-menu-right{% if next.releases_id is empty %} disabled{% endif %}"></a>
+		</div>
+		<div class="release-description">
+			{{ item.release_description|raw }}
+		</div>
+		<div class="release-tracklist">
+			<h3>Трекліст:</h3>
+			{{ item.release_tracklist|raw }}
+		</div>
+	</div>
+	<div class="clearfix"></div>
+    {% if related is not empty %}
+	<div class="related">
+		<p>Схожі релізи:</p>
+        {% for rel in related %}
+		<div class="item related-item" style="background-image: url(/images/releases/{{ rel.release_cover }});">
+			<a href="/releases/{{ rel.releases_id }}">
+				<div class="overlay">
+					<div class="title">
+						<span>{{ rel.release_title }}</span>
+					</div>
+				</div>
+			</a>
+		</div>
+        {% endfor %}
+		<div class="clearfix"></div>
+	</div>
+    {% endif %}
+</div>
+{% endblock %}

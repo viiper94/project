@@ -1,0 +1,49 @@
+{%extends 'index.html'%}
+{% block content %}
+<div class="form-group">
+    <a href="/admin/releases/add" class="btn btn-default"><span class="glyphicon glyphicon-plus"></span> Додати реліз</a>
+</div>
+<div class="form-inline pull-right">
+	<input type='text' class='form-control search-form' id='search' placeholder='Пошук релізів'>
+	<label><input class='radio-inline' type='radio' name='search-by' value='title' checked>За назвою</label>
+	<label><input class='radio-inline' type='radio' name='search-by' value='tracklist'>За треклістом</label>
+</div>
+<form action="/admin/releases/" method="POST">
+    <button class="btn btn-primary" name="resort"><span class="glyphicon glyphicon-refresh"></span> Відсортувати</button>
+	<div class="content">
+        {% for item in releases %}
+		<div class="item">
+			<div class="item-image inline">
+				<a href="/admin/releases/edit/{{ item.releases_id }}" style="background-image: url(/images/releases/{{ item.release_cover }});"></a>
+			</div>
+			<div class="item-info inline">
+				<h4>{{ item.release_title }}</h4>
+				<h5>{{ item.release_artist }}</h5>
+			</div>
+			<div class="item-actions inline">
+				<a class='btn btn-success' href='/admin/releases/edit/{{ item.releases_id }}'>
+					<span class='glyphicon glyphicon-pencil' aria-hidden='true'></span> Редагувати
+				</a>
+				<a class='btn btn-danger' href='/admin/releases/delete/{{ item.releases_id }}' onclick='return confirm("Видалити?")'>
+					<span class='glyphicon glyphicon-trash' aria-hidden='true'></span> Видалити
+				</a>
+			</div>
+			<div class="item-sort inline">
+				<div class='inline' style='width: 48px;'>
+					<a class='btn btn-info' href='/admin/releases/sortup/{{ item.releases_id }}'>
+                        <span class='glyphicon glyphicon-arrow-up'></span>
+                    </a>
+					<a class='btn btn-info' href='/admin/releases/sortdown/{{ item.releases_id }}'>
+                        <span class='glyphicon glyphicon-arrow-down'></span>
+                    </a>
+				</div>
+				<div class='inline' style="max-width: 100px;">
+					<label for='field'>Порядок сортування:<br>
+					<input type='text' id='field' name="sort[{{ item.releases_id }}]" class='form-control' value='{{ item.sort }}'>
+				</div>
+			</div>
+		</div>
+        {% endfor %}
+	</div>
+</form>
+{% endblock %}

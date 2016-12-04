@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width">
+	<link rel="shortcut icon" type="image/x-icon" href="/favicon.ico" />
+	<link rel="stylesheet" href="/assets/bootstrap/css/bootstrap.min.css">
+	<link rel="stylesheet" href="/assets/css/style.css">
+	<title>{% if title is not null %}{{ title }}{% else %}Damage Records{% endif %}</title>
+</head>
+<body>
+	<div class="wrapper">
+		<header>
+			<nav class="navbar navbar-default bottom">
+				<div class="nav-container container-fluid">
+					<div class="navbar-header">
+						<button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar-collapse-1" aria-expanded="false">
+						    <span class="sr-only">Розгорнути меню</span>
+						    <span class="icon-bar"></span>
+						    <span class="icon-bar"></span>
+						    <span class="icon-bar"></span>
+					    </button>
+						<a href="/" class="logo"><img src="/assets/img/damage-logo-sign-600.png"></a>
+					</div>
+					<div class="collapse navbar-collapse" id="navbar-collapse-1">
+						<ul class="nav navbar-nav">
+							<li {% if controller == 'news' %}class="active"{% endif %}><a href="/">НОВИНИ</a></li>
+							<li {% if controller == 'releases' %}class="active"{% endif %}><a href="/releases">РЕЛІЗИ</a></li>
+							<li {% if controller == 'artists' %}class="active"{% endif %}><a href="/artists">АРТИСТИ</a></li>
+							<li {% if controller == 'school' %}class="active"{% endif %} id="dropdown"><a href="/school">ШКОЛА</a>
+								<ul class="dropdown hidden-xs">
+                                    <li><a href="/school">ПРО КУРСИ</a></li>
+                                    <li><a href="/school">ОБЛАДНАННЯ</a></li>
+                                    <li><a href="/school">ЦІНИ</a></li>
+                                    <li><a href="/school">КОНТАКТИ</a></li>
+								</ul>
+							</li>
+							<li {% if controller == 'about' %}class="active"{% endif %}><a href="/about">ПРО НАС</a></li>
+							<li {% if controller == 'contacts' %}class="active"{% endif %}><a href="/contacts">КОНТАКТИ</a></li>
+						</ul>
+						<div class="search-box">
+                            <form action="/search/" method="GET">
+                                <input type="text" name="q" placeholder="Пошук" minlength="3">
+                                <button><span class="glyphicon glyphicon-search"></span></button>
+                            </form>
+						</div>
+					</div>
+				</div>
+			</nav>
+		</header>
+		<main>
+			{% block content %}
+
+   			{% endblock %}
+   		</main>
+		<footer>
+			<div class="partners">
+				<p>PARTNERS:</p>
+				<a href="http://www.kissfm.ua/"><img src="/assets/img/partner-1.png"></a>
+				<a href="#"><img src="/assets/img/partner-2.png"></a>
+				<a href="http://besttrack.in.ua"><img src="/assets/img/partner-3.png"></a>
+				<a href="http://sweet-n-low.de/"><img src="/assets/img/partner-4.png"></a>
+			</div>
+			<div class="links">
+				<p>FOLLOW US:</p>
+				<a href="https://www.facebook.com/" class="social-link fb"></a>
+				<a href="https://twitter.com/" class="social-link twitter"></a>
+				<a href="https://vk.com" class="social-link vk"></a>
+				<a href="https://soundcloud.com/" class="social-link soundcloud"></a>
+				<a href="https://www.youtube.com/" class="social-link youtube"></a>
+				<a href="https://www.instagram.com/" class="social-link instagram"></a>
+				<a href="http://www.last.fm/ru/" class="social-link lastfm"></a>
+			</div>
+			<div class="clearfix"></div>
+			<div class="copyright">
+				<p>&copy; DAMAGE RECORDS</p>
+			</div> 
+		</footer>
+	</div>
+	<script src="/assets/js/jquery.min.js"></script>
+	<script src="/assets/js/jquery.sticky.js"></script>
+	<script src="/assets/bootstrap/js/bootstrap.min.js"></script>
+    <script src="/assets/js/script.js"></script>
+</body>
+</html>

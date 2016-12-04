@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<link rel="stylesheet" href="/admin/bootstrap/css/bootstrap.min.css">
+	<link rel="stylesheet" href="/admin/css/style.css">
+	<script src="/admin/js/jquery-3.1.1.min.js"></script>
+	<script src="/admin/bootstrap/js/bootstrap.min.js"></script>
+	<title>Панель керування</title>
+</head>
+<body>
+	<nav class="navbar navbar-default">
+	  	<div class="container-fluid">
+	   		<div class="navbar-header">
+	      		<button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar-collapse-1" 
+	      		aria-expanded="false">
+			        <span class="sr-only">Розкрити меню</span>
+			        <span class="icon-bar"></span>
+			        <span class="icon-bar"></span>
+			        <span class="icon-bar"></span>
+		      	</button>
+	      		<a href="/admin/"><img src="/assets/img/damage-logo-sign-600.png" style="height: 50px"></a>
+	    	</div>
+	    	<div class="collapse navbar-collapse" id="navbar-collapse-1">
+	      		<ul class="nav navbar-nav">
+		        	<li {% if controller == 'news' %}class="active"{% endif %}><a href="/admin">НОВИНИ</a></li>
+		        	<li {% if controller == 'releases' %}class="active"{% endif %}><a href="/admin/releases">РЕЛІЗИ</a></li>
+		       		<li {% if controller == 'artists' %}class="active"{% endif %}><a href="/admin/artists">АРТИСТИ</a></li>
+		        	<li {% if controller == 'about' %}class="active"{% endif %}><a href="/admin/about">ПРО DAMAGE</a></li>
+		        	<li {% if controller == 'contacts' %}class="active"{% endif %}><a href="/admin/contacts">КОНТАКТИ</a></li>
+	      		</ul>
+	    	</div>
+		</div>
+	</nav>
+    {% block msg %}
+        {% if msg is not empty %}
+            {{ msg|raw }}
+        {% endif %}
+    {% endblock %}
+	<main class="col-md-10 col-md-offset-1">
+		{% block content %}
+
+   		{% endblock %}
+	</main>
+</body>
+</html>

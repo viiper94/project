@@ -1,0 +1,43 @@
+{# prev button #}
+{% set prev = pgn.current_page - 1 %}
+<a class="prev-pgn{% if prev >= 1 %}" href="/{{ controller }}/?page={{ prev }}"{% else %} disabled"{% endif %}>
+    <span class="glyphicon glyphicon-backward"></span>
+</a>
+
+{# first page button #}
+<a href="/{{ controller }}/?page=1" class="pgn{% if pgn.current_page == 1 %} pgn-current{% endif %}">1</a>
+
+{# pages #}
+{% if pgn.total_pages >= 10 %}
+    {% if pgn.current_page < 6 %}
+        {% for i in 2..pgn.current_page + 2 %}
+            <a href="/{{ controller }}/?page={{ i }}" class="pgn{% if i == pgn.current_page %} pgn-current{% endif %}">{{ i }}</a>
+        {% endfor %}
+        <span style="color: #fff">...</span>
+        {# last page button #}
+        <a href="/{{ controller }}/?page={{ pgn.total_pages }}" class="pgn">{{ pgn.total_pages }}</a>
+    {% elseif pgn.current_page >= pgn.total_pages - 4 %}
+        <span style="color: #fff">...</span>
+        {% for i in pgn.current_page - 2..pgn.total_pages %}
+            <a href="/{{ controller }}/?page={{ i }}" class="pgn{% if i == pgn.current_page %} pgn-current{% endif %}">{{ i }}</a>
+        {% endfor %}
+    {% else %}
+        <span style="color: #fff">...</span>
+        {% for i in pgn.current_page - 2..pgn.current_page + 2 %}
+        <a href="/{{ controller }}/?page={{ i }}" class="pgn{% if i == pgn.current_page %} pgn-current{% endif %}">{{ i }}</a>
+        {% endfor %}
+        <span style="color: #fff">...</span>
+        {# last page button #}
+        <a href="/{{ controller }}/?page={{ pgn.total_pages }}" class="pgn">{{ pgn.total_pages }}</a>
+    {% endif %}
+{% else %}
+{% for i in 2..pgn.total_pages %}
+<a href="/{{ controller }}/?page={{ i }}" class="pgn{% if i == pgn.current_page %} pgn-current{% endif %}">{{ i }}</a>
+{% endfor %}
+{% endif %}
+
+{# next button #}
+{% set next = pgn.current_page + 1 %}
+<a class="next-pgn{% if next <= pgn.total_pages %}" href="/{{ controller }}/?page={{ next }}"{% else %} disabled"{% endif %}>
+    <span class="glyphicon glyphicon-forward"></span>
+</a>
