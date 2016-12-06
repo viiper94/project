@@ -8,7 +8,7 @@ header{background-image: url(../img/header1.jpg); background-position: right; ba
 
 	/* navbar */
 .navbar-default.sticked{position: fixed; top: 0; background-color: rgba(0, 0, 0, 0.87);}
-.navbar-default{width: 100%; background-color: rgba(0, 0, 0, 0.7); margin-bottom: 0; border: none; z-index: 2;}
+.navbar-default{width: 100%; background-color: rgba(0, 0, 0, 0.8); margin-bottom: 0; border: none; border-radius: 0; z-index: 2;}
 .nav-container{margin: 0 auto; max-width: 1026px;}
 .logo{margin-right: 10px;}
 .logo img{height: 45px;}
@@ -56,6 +56,7 @@ a:not(.disabled):hover{color: #d20023;}
 
 /* news, artist page */
 .news-container{color: #fff; width: 51%; margin: 5px auto;}
+.news-container a{ color: #d20023;}
 figure{overflow: hidden; margin: 0 auto;}
 figure img{width: 100%;}
 article{padding: 10px 0; text-align: justify;}
@@ -107,6 +108,7 @@ article{padding: 10px 0; text-align: justify;}
 /* related */
 .related{margin: 25px 0;}
 .related-item{width: 33.3%; height: 150px; float: left; background-position: center; margin-top: 10px;}
+.related-item .title span{display: block; margin: 0px 4px;}
 
 /* sharers */
 .sharers{margin: 20px 0;}
@@ -241,6 +243,9 @@ footer{min-height: 150px; margin: 0 auto; color: #fff; padding: 30px 15px; borde
 
 /* lg */
 @media (min-width: 1200px) {
+	/* header */
+	header{}
+
 	/* footer */
 	footer{width: 1026px;}
 }
