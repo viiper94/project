@@ -10,7 +10,7 @@
 </head>
 <body>
 	<div class="wrapper">
-		<header>
+		<header {% if item.news_title_picture %}style="background-image: url(/images/news/{{ item.news_title_picture }});"{% endif %}>
 			<nav class="navbar navbar-default bottom">
 				<div class="nav-container container-fluid">
 					<div class="navbar-header">
