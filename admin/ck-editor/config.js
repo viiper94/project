@@ -23,7 +23,7 @@ CKEDITOR.editorConfig = function( config ) {
 		{ name: 'about' }
 	];
 	
-	config.extraAllowedContent = 'style[*]; a[*](*)';
+	config.extraAllowedContent = 'style[*]; a[*](*); iframe[*]';
 	config.forcePasteAsPlainText = true;
 	config.enterMode = CKEDITOR.ENTER_BR;
 	config.shiftEnterMode = CKEDITOR.ENTER_BR;

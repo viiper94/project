@@ -104,6 +104,7 @@ class __TwigTemplate_d1a9eed647ef71e392c0539b324bdcee6697e387e51d1d317038425ac15
 <script type=\"text/javascript\" src=\"/admin/ck-editor/ckeditor.js\"></script>
 <script type=\"text/javascript\">
     CKEDITOR.replace('text');
+    CKEDITOR.config.allowedContent = true;
 </script>
 ";
     }

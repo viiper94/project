@@ -36,7 +36,14 @@ class __TwigTemplate_159eb1db8d163257ac7f8d15e32dbb495f6d83eca144413f62d0c49e480
 </head>
 <body>
 \t<div class=\"wrapper\">
-\t\t<header>
+\t\t<header ";
+        // line 13
+        if ($this->getAttribute((isset($context["item"]) ? $context["item"] : null), "news_title_picture", array())) {
+            echo "style=\"background-image: url(/images/news/";
+            echo twig_escape_filter($this->env, $this->getAttribute((isset($context["item"]) ? $context["item"] : null), "news_title_picture", array()), "html", null, true);
+            echo ");\"";
+        }
+        echo ">
 \t\t\t<nav class=\"navbar navbar-default bottom\">
 \t\t\t\t<div class=\"nav-container container-fluid\">
 \t\t\t\t\t<div class=\"navbar-header\">
@@ -162,7 +169,7 @@ class __TwigTemplate_159eb1db8d163257ac7f8d15e32dbb495f6d83eca144413f62d0c49e480
 
     public function getDebugInfo()
     {
-        return array (  149 => 53,  146 => 52,  112 => 55,  110 => 52,  92 => 39,  86 => 38,  73 => 30,  67 => 29,  61 => 28,  55 => 27,  30 => 9,  20 => 1,);
+        return array (  156 => 53,  153 => 52,  119 => 55,  117 => 52,  99 => 39,  93 => 38,  80 => 30,  74 => 29,  68 => 28,  62 => 27,  41 => 13,  30 => 9,  20 => 1,);
     }
 
     public function getSource()
