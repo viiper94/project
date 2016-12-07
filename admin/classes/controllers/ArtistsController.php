@@ -124,4 +124,19 @@ class ArtistsController extends Controller{
         }
     }
 
+    function actionAjax(){
+        if($response['data'] = $this->model->searchData($_GET['query'], array(
+            'artist_name',
+            'artist_picture',
+            'artist_id',
+            'sort'
+        ))){
+            $response['status'] = 'OK';
+            echo json_encode($response);
+        }else{
+            $response['status'] = 'No result';
+            echo json_encode($response);
+        }
+    }
+
 }

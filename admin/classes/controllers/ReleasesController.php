@@ -141,4 +141,20 @@ class ReleasesController extends Controller{
         }
     }
 
+    function actionAjax(){
+        if($response['data'] = $this->model->searchData($_GET['query'], array(
+            'release_title',
+            'release_cover',
+            'release_artist',
+            'releases_id',
+            'sort'
+        ))){
+            $response['status'] = 'OK';
+            echo json_encode($response);
+        }else{
+            $response['status'] = 'No result';
+            echo json_encode($response);
+        }
+    }
+
 }

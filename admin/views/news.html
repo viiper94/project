@@ -4,7 +4,7 @@
 	<a href="/admin/news/add" class="btn btn-default"><span class="glyphicon glyphicon-plus"></span> Додати новину</a>
 </div>
 <div class="form-inline pull-right">
-	<input type='text' class='form-control search-form' id='search' placeholder='Пошук новин'>
+	<input type='text' class='form-control search-form' id='search' data-section="news" placeholder='Пошук новин'>
 </div>
 <form action="/admin/news/" method="POST">
 	<button class="btn btn-primary" name="resort"><span class="glyphicon glyphicon-refresh"></span> Відсортувати</button>
@@ -32,12 +32,44 @@
 					<a class='btn btn-info' href='/admin/news/sortdown/{{ item.news_id }}'><span class='glyphicon glyphicon-arrow-down'></span></a>
 				</div>
 				<div class='inline' style="max-width: 100px;">
-					<label for='field'>Порядок сортування:<br>
-					<input type='text' id='field' name="sort[{{ item.news_id }}]" class='form-control' value='{{ item.sort }}'>
+					<label>Порядок сортування:<br>
+					    <input type='text' name="sort[{{ item.news_id }}]" class='form-control' value='{{ item.sort }}'>
+                    </label>
 				</div>
 			</div>
 		</div>
         {% endfor %}
 	</div>
 </form>
+<script src="/admin/js/lodash.js"></script>
+<script type="text/template" id="news-template">
+    <div class="item">
+        <div class="item-image inline">
+            <a href="/admin/news/edit/<%=id%>" style="background-image: url(/images/news/<%=picture%>);"></a>
+        </div>
+        <div class="item-info inline">
+            <h4><%=title%></h4>
+            <h5><%=info%></h5>
+        </div>
+        <div class="item-actions inline">
+            <a class='btn btn-success' href='/admin/news/edit/<%=id%>'>
+                <span class='glyphicon glyphicon-pencil' aria-hidden='true'></span> Редагувати
+            </a>
+            <a class='btn btn-danger' href='/admin/news/delete/<%=id%>' onclick='return confirm("Видалити?")'>
+                <span class='glyphicon glyphicon-trash' aria-hidden='true'></span> Видалити
+            </a>
+        </div>
+        <div class="item-sort inline">
+            <div class='inline' style='width: 48px;'>
+                <a class='btn btn-info' href='/admin/news/sortup/<%=id%>'><span class='glyphicon glyphicon-arrow-up'></span></a>
+                <a class='btn btn-info' href='/admin/news/sortdown/<%=id%>'><span class='glyphicon glyphicon-arrow-down'></span></a>
+            </div>
+            <div class='inline' style="max-width: 100px;">
+                <label>Порядок сортування:<br>
+                    <input type='text' name="sort[<%=id%>]" class='form-control' value='<%=sort%>'>
+                </label>
+            </div>
+        </div>
+    </div>
+</script>
 {% endblock %}

@@ -1,5 +1,6 @@
 $(document).ready(function(){
 
+    // making navbar floating
     var navbarPos = $('.navbar').offset();
     window.onscroll = function(){
         if(window.pageYOffset >= navbarPos.top){
@@ -10,5 +11,5 @@ $(document).ready(function(){
             $('.navbar').addClass('bottom');
         }
     }
-
+    
 });

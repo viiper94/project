@@ -96,7 +96,7 @@ class Database extends Production{
 	
 	public function search($table, $column, $q, $rows = null){
 		$rows != null ? $rows = implode(', ', $rows) : $rows = '*';
-		$query = "SELECT $rows FROM $table WHERE $column LIKE ?";	
+		$query = "SELECT $rows FROM $table WHERE $column LIKE ? ORDER BY sort DESC";
 		$stmt = $this->link->prepare($query);
 		if(!empty($this->link->error)){
 			$this->fail($this->link->error);
@@ -120,8 +120,8 @@ class Database extends Production{
 			$type = substr(gettype($val), 0, 1);
 			$stmt->bind_param($type, $val);
 		} else {
-			$stmt = $this->link->prepare($query);
-		}		
+            $stmt = $this->link->prepare($query);
+        }
 		$stmt->execute();
 		if(!empty($this->link->error)){
 			$this->fail($this->link->error);

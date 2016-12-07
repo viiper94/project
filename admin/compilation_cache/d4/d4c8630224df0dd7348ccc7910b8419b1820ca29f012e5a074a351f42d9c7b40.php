@@ -32,7 +32,7 @@ class __TwigTemplate_9b161dbcf9c763e6193afc1b63fd7742436b79eeb1f7c735f1ee51e17e8
 \t<a href=\"/admin/news/add\" class=\"btn btn-default\"><span class=\"glyphicon glyphicon-plus\"></span> Додати новину</a>
 </div>
 <div class=\"form-inline pull-right\">
-\t<input type='text' class='form-control search-form' id='search' placeholder='Пошук новин'>
+\t<input type='text' class='form-control search-form' id='search' data-section=\"news\" placeholder='Пошук новин'>
 </div>
 <form action=\"/admin/news/\" method=\"POST\">
 \t<button class=\"btn btn-primary\" name=\"resort\"><span class=\"glyphicon glyphicon-refresh\"></span> Відсортувати</button>
@@ -88,13 +88,14 @@ class __TwigTemplate_9b161dbcf9c763e6193afc1b63fd7742436b79eeb1f7c735f1ee51e17e8
             echo "'><span class='glyphicon glyphicon-arrow-down'></span></a>
 \t\t\t\t</div>
 \t\t\t\t<div class='inline' style=\"max-width: 100px;\">
-\t\t\t\t\t<label for='field'>Порядок сортування:<br>
-\t\t\t\t\t<input type='text' id='field' name=\"sort[";
+\t\t\t\t\t<label>Порядок сортування:<br>
+\t\t\t\t\t    <input type='text' name=\"sort[";
             // line 36
             echo twig_escape_filter($this->env, $this->getAttribute($context["item"], "news_id", array()), "html", null, true);
             echo "]\" class='form-control' value='";
             echo twig_escape_filter($this->env, $this->getAttribute($context["item"], "sort", array()), "html", null, true);
             echo "'>
+                    </label>
 \t\t\t\t</div>
 \t\t\t</div>
 \t\t</div>
@@ -103,9 +104,40 @@ class __TwigTemplate_9b161dbcf9c763e6193afc1b63fd7742436b79eeb1f7c735f1ee51e17e8
         $_parent = $context['_parent'];
         unset($context['_seq'], $context['_iterated'], $context['_key'], $context['item'], $context['_parent'], $context['loop']);
         $context = array_intersect_key($context, $_parent) + $_parent;
-        // line 41
+        // line 42
         echo "\t</div>
 </form>
+<script src=\"/admin/js/lodash.js\"></script>
+<script type=\"text/template\" id=\"news-template\">
+    <div class=\"item\">
+        <div class=\"item-image inline\">
+            <a href=\"/admin/news/edit/<%=id%>\" style=\"background-image: url(/images/news/<%=picture%>);\"></a>
+        </div>
+        <div class=\"item-info inline\">
+            <h4><%=title%></h4>
+            <h5><%=info%></h5>
+        </div>
+        <div class=\"item-actions inline\">
+            <a class='btn btn-success' href='/admin/news/edit/<%=id%>'>
+                <span class='glyphicon glyphicon-pencil' aria-hidden='true'></span> Редагувати
+            </a>
+            <a class='btn btn-danger' href='/admin/news/delete/<%=id%>' onclick='return confirm(\"Видалити?\")'>
+                <span class='glyphicon glyphicon-trash' aria-hidden='true'></span> Видалити
+            </a>
+        </div>
+        <div class=\"item-sort inline\">
+            <div class='inline' style='width: 48px;'>
+                <a class='btn btn-info' href='/admin/news/sortup/<%=id%>'><span class='glyphicon glyphicon-arrow-up'></span></a>
+                <a class='btn btn-info' href='/admin/news/sortdown/<%=id%>'><span class='glyphicon glyphicon-arrow-down'></span></a>
+            </div>
+            <div class='inline' style=\"max-width: 100px;\">
+                <label>Порядок сортування:<br>
+                    <input type='text' name=\"sort[<%=id%>]\" class='form-control' value='<%=sort%>'>
+                </label>
+            </div>
+        </div>
+    </div>
+</script>
 ";
     }
 
@@ -121,7 +153,7 @@ class __TwigTemplate_9b161dbcf9c763e6193afc1b63fd7742436b79eeb1f7c735f1ee51e17e8
 
     public function getDebugInfo()
     {
-        return array (  107 => 41,  94 => 36,  87 => 32,  83 => 31,  74 => 25,  68 => 22,  62 => 19,  58 => 18,  50 => 15,  46 => 13,  42 => 12,  31 => 3,  28 => 2,  11 => 1,);
+        return array (  108 => 42,  94 => 36,  87 => 32,  83 => 31,  74 => 25,  68 => 22,  62 => 19,  58 => 18,  50 => 15,  46 => 13,  42 => 12,  31 => 3,  28 => 2,  11 => 1,);
     }
 
     public function getSource()

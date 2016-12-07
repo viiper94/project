@@ -125,4 +125,20 @@ class NewsController extends Controller{
         }
     }
     
+    function actionAjax(){
+        if($response['data'] = $this->model->searchData($_GET['query'], array(
+            'news_title',
+            'news_title_picture',
+            'DATE_FORMAT(news_date, \'%e %M %Y\') as news_date',
+            'news_id',
+            'sort'
+        ))){
+            $response['status'] = 'OK';
+            echo json_encode($response);
+        }else{
+            $response['status'] = 'No result';
+            echo json_encode($response);
+        }
+    }
+    
 }

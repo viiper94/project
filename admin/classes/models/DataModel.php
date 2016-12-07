@@ -65,5 +65,11 @@ class DataModel extends Model{
         if(!unlink(ROOT .'../images/'.$this->section.'/'.$pic[0][$this->columns['picture']])) return false;
         return $this->db->delete($this->table, $this->columns['id'], intval($_GET['id']));
     }
+
+    public function searchData($query, $fields = null){
+        $searchBy = isset($_GET['serachBy']) ? $_GET['serachBy'] : $this->columns['title'] ;
+        //Kint::dump($query);
+        return $this->db->search($this->table, $searchBy, $query, $fields);
+    }
     
 }
