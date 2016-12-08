@@ -33,8 +33,8 @@ class __TwigTemplate_740e8d7a4b7c012058217222fc517964527aa1fba63a1d827e6c3d45426
 </div>
 <div class=\"form-inline pull-right\">
 \t<input type='text' class='form-control search-form' id='search' data-section=\"releases\" placeholder='Пошук релізів'>
-\t<label><input class='radio-inline' type='radio' name='search-by' value='title' checked>За назвою</label>
-\t<label><input class='radio-inline' type='radio' name='search-by' value='tracklist'>За треклістом</label>
+\t<label><input class='radio-inline' type='radio' name='search-by' value='release_title' checked>За назвою</label>
+\t<label><input class='radio-inline' type='radio' name='search-by' value='release_tracklist'>За треклістом</label>
 </div>
 <form action=\"/admin/releases/\" method=\"POST\">
     <button class=\"btn btn-primary\" name=\"resort\"><span class=\"glyphicon glyphicon-refresh\"></span> Відсортувати</button>

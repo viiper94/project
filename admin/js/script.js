@@ -1,26 +1,37 @@
 $(document).ready(function(){
 
     // search handler
-    $('#search').keyup(function(){
+    $(document).on('keyup', '#search, #search-related', function(){
+        //console.log(this)
         if($(this).val().length > 2){
             var query = $(this).val();
             var section = $(this).attr('data-section');
-            sendAjax(query, section);
+            var related = $(this).attr('id') == 'search-related' ? $(this).attr('data-id') : false;
+            var searchBy = $('input[name=search-by]:checked').attr('value');
+            sendAjax(query, section, related, searchBy);
         }
     });
 
-    function sendAjax(query, section){
+    function sendAjax(query, section, related, searchBy){
         $.ajax({
             cache: false,
             dataType : 'json',
             url : '/admin/'+section+'/ajax',
             data : {
-                'query' : query
+                'query' : query,
+                'searchBy' : searchBy,
+                'related' : related
             },
             success : function(response){
-                $('.content').html('');
+                var tmp, cols, className;
+                if(related){
+                    className = '.item-list';
+                    $(className).html('');
+                }else{
+                    className = '.content';
+                    $(className).html('');
+                }
                 if(response.status == 'OK'){
-                    var tmp, cols;
                     switch(section){
                         case 'news' :
                             tmp = 'news-template';
@@ -49,15 +60,15 @@ $(document).ready(function(){
                             };
                             break;
                     }
-                    insert(response, tmp, cols);
+                    render(response, tmp, cols, className);
                 }else{
-                    $('.content').append('<h3>No result :(</h3>')
+                    $(className).append('<h3>No result :(</h3>');
                 }
             }
         });
     }
     
-    function insert(response, tmpId, cols){
+    function render(response, tmpId, cols, className){
         var template = _.template($('#'+tmpId).html());
         for(var i = 0; i < Object.keys(response.data).length; i++){
             var data = {
@@ -69,9 +80,12 @@ $(document).ready(function(){
             if(cols.info != undefined){
                 data.info = response.data[i][cols.info];
             }
+            if(response.related){
+                data.checked = $.inArray(data.id.toString(), response.related) !== -1;                
+            }
             //console.log(data);
             var toAppend = template(data);
-            $('.content').append(toAppend);
+            $(className).append(toAppend);
         }
     }
 

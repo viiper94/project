@@ -111,7 +111,7 @@ class __TwigTemplate_816282b03e9197accec941c20542db99e03ff4499f5b9049e3458484061
         echo "        </div>
         <div class=\"col-md-5\">
             <h4>Пошук релізу</h4>
-            <input type=\"text\" class=\"form-control\" id=\"search\" placeholder=\"Шукати реліз\">
+            <input type=\"text\" class=\"form-control\" id=\"search-related\" data-id=\"-1\" data-section=\"releases\" placeholder=\"Шукати реліз\">
             <div class=\"item-list\"></div>
         </div>
     </div>
@@ -127,6 +127,14 @@ class __TwigTemplate_816282b03e9197accec941c20542db99e03ff4499f5b9049e3458484061
 </script>
 <script type=\"text/javascript\">
     CKEDITOR.replace('tracklist');
+</script>
+<script src=\"/admin/js/lodash.js\"></script>
+<script type=\"text/html\" id=\"release-template\">
+    <div class=\"checkbox\">
+        <label>
+            <input type=\"checkbox\" name=\"related[]\" value=\"<%=id%>\"> <%=title%>
+        </label>
+    </div>
 </script>
 ";
     }

@@ -75,7 +75,7 @@ class __TwigTemplate_7dad142b988dac1f81918384afc965df511ac33e0c7fadbc9d8f15ca071
         echo "        </div>
         <div class=\"col-md-5\">
             <h4>Пошук новин</h4>
-            <input type=\"text\" class=\"form-control\" id=\"search\" placeholder=\"Шукати новину\">
+            <input type=\"text\" class=\"form-control\" id=\"search-related\" data-section=\"news\" data-id=\"-1\" placeholder=\"Шукати новину\">
             <div class=\"item-list\"></div>
         </div>
     </div>
@@ -86,6 +86,14 @@ class __TwigTemplate_7dad142b988dac1f81918384afc965df511ac33e0c7fadbc9d8f15ca071
 <script type=\"text/javascript\" src=\"/admin/ck-editor/ckeditor.js\"></script>
 <script type=\"text/javascript\">
     CKEDITOR.replace('text');
+</script>
+<script src=\"/admin/js/lodash.js\"></script>
+<script type=\"text/html\" id=\"news-template\">
+    <div class=\"checkbox\">
+        <label>
+            <input type=\"checkbox\" name=\"related[]\" value=\"<%=id%>\"> <%=title%>
+        </label>
+    </div>
 </script>
 ";
     }

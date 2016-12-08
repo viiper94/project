@@ -67,9 +67,14 @@ class DataModel extends Model{
     }
 
     public function searchData($query, $fields = null){
-        $searchBy = isset($_GET['serachBy']) ? $_GET['serachBy'] : $this->columns['title'] ;
+        $searchBy = isset($_GET['searchBy']) ? $_GET['searchBy'] : $this->columns['title'];
         //Kint::dump($query);
         return $this->db->search($this->table, $searchBy, $query, $fields);
+    }
+
+    public function searchRelatedData($query){
+        $searchBy = isset($_GET['searchBy']) ? $_GET['searchBy'] : $this->columns['title'];
+        return $this->db->search($this->table, $searchBy, $query, array($this->columns['id'], $this->columns['title']));
     }
     
 }

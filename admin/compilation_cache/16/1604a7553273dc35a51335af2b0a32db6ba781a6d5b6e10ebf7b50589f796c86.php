@@ -93,7 +93,10 @@ class __TwigTemplate_96b9c8da9d146d173330964c02f059c687ac86e1657e99dd200a132a17d
         echo "        </div>
         <div class=\"col-md-5\">
             <h4>Пошук артистів</h4>
-            <input type=\"text\" class=\"form-control\" id=\"search\" placeholder=\"Шукати артиста\">
+            <input type=\"text\" class=\"form-control\" id=\"search-related\" data-id=\"";
+        // line 40
+        echo twig_escape_filter($this->env, $this->getAttribute((isset($context["artists"]) ? $context["artists"] : null), "artist_id", array()), "html", null, true);
+        echo "\" data-section=\"artists\" placeholder=\"Шукати артиста\">
             <div class=\"item-list\"></div>
         </div>
     </div>
@@ -111,6 +114,14 @@ class __TwigTemplate_96b9c8da9d146d173330964c02f059c687ac86e1657e99dd200a132a17d
 <script type=\"text/javascript\">
     CKEDITOR.replace('text');
 </script>
+<script src=\"/admin/js/lodash.js\"></script>
+<script type=\"text/html\" id=\"artist-template\">
+    <div class=\"checkbox\">
+        <label>
+            <input type=\"checkbox\" name=\"related[]\" value=\"<%=id%>\"<% if(checked){ %> checked<% } %>> <%=title%>
+        </label>
+    </div>
+</script>
 ";
     }
 
@@ -126,7 +137,7 @@ class __TwigTemplate_96b9c8da9d146d173330964c02f059c687ac86e1657e99dd200a132a17d
 
     public function getDebugInfo()
     {
-        return array (  103 => 45,  93 => 37,  77 => 33,  73 => 31,  69 => 30,  57 => 21,  50 => 17,  41 => 11,  31 => 3,  28 => 2,  11 => 1,);
+        return array (  106 => 45,  98 => 40,  93 => 37,  77 => 33,  73 => 31,  69 => 30,  57 => 21,  50 => 17,  41 => 11,  31 => 3,  28 => 2,  11 => 1,);
     }
 
     public function getSource()

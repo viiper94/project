@@ -32,7 +32,7 @@ class __TwigTemplate_7b341e824c6dee2e2898f94b1a3c72c494dd0706565ee54a3dec278cbf7
         $context['_seq'] = twig_ensure_traversable((isset($context["news"]) ? $context["news"] : null));
         foreach ($context['_seq'] as $context["_key"] => $context["item"]) {
             // line 4
-            echo "<div class=\"item item-block\" style=\"background-image: url(./images/news/";
+            echo "<div class=\"item item-block\" style=\"background-image: url(/images/news/";
             echo twig_escape_filter($this->env, $this->getAttribute($context["item"], "news_title_picture", array()), "html", null, true);
             echo ");\">
 \t<a href=\"/news/";

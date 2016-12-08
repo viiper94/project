@@ -89,7 +89,10 @@ class __TwigTemplate_d1a9eed647ef71e392c0539b324bdcee6697e387e51d1d317038425ac15
         echo "        </div>
         <div class=\"col-md-5\">
             <h4>Пошук новин</h4>
-            <input type=\"text\" class=\"form-control\" id=\"search\" placeholder=\"Шукати новину\">
+            <input type=\"text\" class=\"form-control\" id=\"search-related\" data-section=\"news\" data-id=\"";
+        // line 36
+        echo twig_escape_filter($this->env, $this->getAttribute((isset($context["news"]) ? $context["news"] : null), "news_id", array()), "html", null, true);
+        echo "\" placeholder=\"Шукати новину\">
             <div class=\"item-list\"></div>
         </div>
     </div>
@@ -106,6 +109,14 @@ class __TwigTemplate_d1a9eed647ef71e392c0539b324bdcee6697e387e51d1d317038425ac15
     CKEDITOR.replace('text');
     CKEDITOR.config.allowedContent = true;
 </script>
+<script src=\"/admin/js/lodash.js\"></script>
+<script type=\"text/html\" id=\"news-template\">
+    <div class=\"checkbox\">
+        <label>
+            <input type=\"checkbox\" name=\"related[]\" value=\"<%=id%>\"<% if(checked){ %> checked<% } %>> <%=title%>
+        </label>
+    </div>
+</script>
 ";
     }
 
@@ -121,7 +132,7 @@ class __TwigTemplate_d1a9eed647ef71e392c0539b324bdcee6697e387e51d1d317038425ac15
 
     public function getDebugInfo()
     {
-        return array (  99 => 41,  89 => 33,  73 => 29,  69 => 27,  65 => 26,  55 => 19,  48 => 15,  39 => 9,  31 => 3,  28 => 2,  11 => 1,);
+        return array (  102 => 41,  94 => 36,  89 => 33,  73 => 29,  69 => 27,  65 => 26,  55 => 19,  48 => 15,  39 => 9,  31 => 3,  28 => 2,  11 => 1,);
     }
 
     public function getSource()

@@ -75,7 +75,7 @@ class __TwigTemplate_5f27e879af85e79b534fabd0a41524c73cf40eea3bb61eda54d09729dd5
         echo "        </div>
         <div class=\"col-md-5\">
             <h4>Пошук артистів</h4>
-            <input type=\"text\" class=\"form-control\" id=\"search\" placeholder=\"Шукати артиста\">
+            <input type=\"text\" class=\"form-control\" id=\"search-related\" data-id=\"-1\" data-section=\"artists\" placeholder=\"Шукати артиста\">
             <div class=\"item-list\"></div>
         </div>
     </div>
@@ -86,6 +86,14 @@ class __TwigTemplate_5f27e879af85e79b534fabd0a41524c73cf40eea3bb61eda54d09729dd5
 <script type=\"text/javascript\" src=\"/admin/ck-editor/ckeditor.js\"></script>
 <script type=\"text/javascript\">
     CKEDITOR.replace('text');
+</script>
+<script src=\"/admin/js/lodash.js\"></script>
+<script type=\"text/html\" id=\"artist-template\">
+    <div class=\"checkbox\">
+        <label>
+            <input type=\"checkbox\" name=\"related[]\" value=\"<%=id%>\"> <%=title%>
+        </label>
+    </div>
 </script>
 ";
     }

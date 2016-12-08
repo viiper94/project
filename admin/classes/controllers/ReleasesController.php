@@ -142,19 +142,31 @@ class ReleasesController extends Controller{
     }
 
     function actionAjax(){
-        if($response['data'] = $this->model->searchData($_GET['query'], array(
-            'release_title',
-            'release_cover',
-            'release_artist',
-            'releases_id',
-            'sort'
-        ))){
-            $response['status'] = 'OK';
-            echo json_encode($response);
-        }else{
-            $response['status'] = 'No result';
-            echo json_encode($response);
+        if(intval($_GET['related'])){
+            if($response['data'] = $this->model->searchRelatedData($_GET['query'])){
+                if(intval($_GET['related']) > 0){
+                    $query = 'SELECT release_related FROM releases';
+                    $result = $this->model->db->safeQuery($query, 'releases_id', intval($_GET['related']));
+                    $response['related'] = unserialize($result[0]['release_related']);
+                }
+                $response['status'] = 'OK';
+            }else{
+                $response['status'] = 'No result';
+            }
+        } else{
+            if($response['data'] = $this->model->searchData($_GET['query'], array(
+                'release_title',
+                'release_cover',
+                'release_artist',
+                'releases_id',
+                'sort'
+            ))){
+                $response['status'] = 'OK';
+            } else{
+                $response['status'] = 'No result';
+            }
         }
+        echo json_encode($response);
     }
 
 }

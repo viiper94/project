@@ -124,21 +124,33 @@ class NewsController extends Controller{
             $this->actionNews(View::errMsg('Сталась помилка!'));
         }
     }
-    
+
     function actionAjax(){
-        if($response['data'] = $this->model->searchData($_GET['query'], array(
-            'news_title',
-            'news_title_picture',
-            'DATE_FORMAT(news_date, \'%e %M %Y\') as news_date',
-            'news_id',
-            'sort'
-        ))){
-            $response['status'] = 'OK';
-            echo json_encode($response);
-        }else{
-            $response['status'] = 'No result';
-            echo json_encode($response);
+        if(intval($_GET['related'])){
+            if($response['data'] = $this->model->searchRelatedData($_GET['query'])){
+                if(intval($_GET['related']) > 0){
+                    $query = 'SELECT news_related FROM news';
+                    $result = $this->model->db->safeQuery($query, 'news_id', intval($_GET['related']));
+                    $response['related'] = unserialize($result[0]['news_related']);
+                }
+                $response['status'] = 'OK';
+            }else{
+                $response['status'] = 'No result';
+            }
+        } else{
+            if($response['data'] = $this->model->searchData($_GET['query'], array(
+                'news_title',
+                'news_title_picture',
+                'DATE_FORMAT(news_date, \'%e %M %Y\') as news_date',
+                'news_id',
+                'sort'
+            ))){
+                $response['status'] = 'OK';
+            } else{
+                $response['status'] = 'No result';
+            }
         }
+        echo json_encode($response);
     }
     
 }

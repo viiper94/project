@@ -69,7 +69,7 @@
         </div>
         <div class="col-md-5">
             <h4>Пошук релізу</h4>
-            <input type="text" class="form-control" id="search" placeholder="Шукати реліз">
+            <input type="text" class="form-control" id="search-related" data-section="releases" data-id="{{ releases.releases_id }}" placeholder="Шукати реліз">
             <div class="item-list"></div>
         </div>
     </div>
@@ -86,5 +86,13 @@
 </script>
 <script type="text/javascript">
     CKEDITOR.replace('tracklist');
+</script>
+<script src="/admin/js/lodash.js"></script>
+<script type="text/html" id="release-template">
+    <div class="checkbox">
+        <label>
+            <input type="checkbox" name="related[]" value="<%=id%>"<% if(checked){ %> checked<% } %>> <%=title%>
+        </label>
+    </div>
 </script>
 {% endblock %}
