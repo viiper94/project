@@ -2,40 +2,51 @@ $(document).ready(function(){
 
     // search handler
     $(document).on('keyup', '#search, #search-related', function(){
-        //console.log(this)
+        var ajax = {};
+        ajax.related = $(this).attr('id') == 'search-related' ? $(this).attr('data-id') : false;
+        ajax.section = $(this).attr('data-section');
         if($(this).val().length > 2){
-            var query = $(this).val();
-            var section = $(this).attr('data-section');
-            var related = $(this).attr('id') == 'search-related' ? $(this).attr('data-id') : false;
-            var searchBy = $('input[name=search-by]:checked').attr('value');
-            sendAjax(query, section, related, searchBy);
+            ajax.query = $(this).val();
+            ajax.searchBy = $('input[name=search-by]:checked').attr('value');
+            sendAjax(ajax);
+        }
+        if($(this).val().length == 0 && !ajax.related){
+            ajax.query = '';
+            sendAjax(ajax);
         }
     });
 
-    function sendAjax(query, section, related, searchBy){
+    function sendAjax(ajax){
         $.ajax({
             cache: false,
             dataType : 'json',
-            url : '/admin/'+section+'/ajax',
+            url : '/admin/'+ajax.section+'/ajax',
             data : {
-                'query' : query,
-                'searchBy' : searchBy,
-                'related' : related
+                'query' : ajax.query,
+                'searchBy' : ajax.searchBy,
+                'related' : ajax.related
             },
             success : function(response){
-                var tmp, cols, className;
-                if(related){
-                    className = '.item-list';
-                    $(className).html('');
+                var data = {};
+                data.related = false;
+                if(data.related){
+                    data.related = true;
+                    if($('.checked-list .checkbox').length > 0){
+                        removeUnchecked();
+                    }
+                    if($('.item-list .checkbox').length > 0){
+                        saveChecked();
+                    }
+                    data.className = '.item-list';
                 }else{
-                    className = '.content';
-                    $(className).html('');
+                    data.className = '.content';
                 }
+                $(data.className).html('');
                 if(response.status == 'OK'){
-                    switch(section){
+                    switch(ajax.section){
                         case 'news' :
-                            tmp = 'news-template';
-                            cols = {
+                            data.tmpId = 'news-template';
+                            data.cols = {
                                 'id' : 'news_id',
                                 'title' : 'news_title',
                                 'picture' : 'news_title_picture',
@@ -43,8 +54,8 @@ $(document).ready(function(){
                             };
                             break;
                         case 'releases' :
-                            tmp = 'release-template';
-                            cols = {
+                            data.tmpId = 'release-template';
+                            data.cols = {
                                 'id' : 'releases_id',
                                 'title' : 'release_title',
                                 'picture' : 'release_cover',
@@ -52,40 +63,84 @@ $(document).ready(function(){
                             };
                             break;
                         case 'artists' :
-                            tmp = 'artist-template';
-                            cols = {
+                            data.tmpId = 'artist-template';
+                            data.cols = {
                                 'id' : 'artist_id',
                                 'title' : 'artist_name',
                                 'picture' : 'artist_picture'
                             };
                             break;
                     }
-                    render(response, tmp, cols, className);
+                    render(response, data);
                 }else{
-                    $(className).append('<h3>No result :(</h3>');
+                    $(data.className).append('<h3>No result :(</h3>');
                 }
             }
         });
     }
-    
-    function render(response, tmpId, cols, className){
-        var template = _.template($('#'+tmpId).html());
+
+    function render(response, info){
+        var template = _.template($('#'+info.tmpId).html());
         for(var i = 0; i < Object.keys(response.data).length; i++){
             var data = {
-                id : response.data[i][cols.id],
-                title : response.data[i][cols.title],
-                picture : response.data[i][cols.picture],
+                id : response.data[i][info.cols.id],
+                title : response.data[i][info.cols.title],
+                picture : response.data[i][info.cols.picture],
                 sort : response.data[i].sort
             };
-            if(cols.info != undefined){
-                data.info = response.data[i][cols.info];
+            if(info.cols.info != undefined){
+                data.info = response.data[i][info.cols.info];
             }
             if(response.related){
-                data.checked = $.inArray(data.id.toString(), response.related) !== -1;                
+                data.checked = $.inArray(data.id.toString(), response.related) !== -1;
             }
-            //console.log(data);
             var toAppend = template(data);
-            $(className).append(toAppend);
+            var exist = false;
+            if(info.related){
+                var checkedList = $('.checked-list .checkbox');
+                if(checkedList != undefined){
+                    for(var j = 0; j < checkedList.length; j++){
+                        if(checkedList[j].children[0].innerText == data.title){
+                            exist = true;
+                            break;
+                        }
+                    }
+                }
+            }
+            if(!exist) $(info.className).append(toAppend);
+        }
+    }
+
+    function removeUnchecked(){
+        var checkedList = $('.checked-list .checkbox');
+        for(var j = 0; j < checkedList.length; j++){
+            var checkbox = checkedList[j];
+            if(!checkbox.children[0].children[0].checked){
+                checkbox.remove();
+            }
+        }
+    }
+
+    function saveChecked(){
+        var divObj = $('.item-list .checkbox');
+        for(var j = 0; j < divObj.length; j++){
+            var checkbox = divObj[j];
+            if(checkbox.children[0].children[0].checked){
+                // check if already saved
+                var exist = false;
+                var checkedList = $('.checked-list .checkbox');
+                if(checkedList != undefined){
+                    for(var i = 0; i < checkedList.length; i++){
+                        if(checkedList[i].children[0].innerText == checkbox.children[0].innerText){
+                            exist = true;
+                            break;
+                        }
+                    }
+                }
+                if(!exist){
+                    $('.checked-list').append(checkbox);
+                }
+            }
         }
     }
 

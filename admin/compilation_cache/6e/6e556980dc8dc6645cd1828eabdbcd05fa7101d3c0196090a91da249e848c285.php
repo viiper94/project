@@ -149,16 +149,21 @@ class __TwigTemplate_0aae967c09eba1bf4955722e30cf5e3fa1a3bf16e04ada1edb86b92cae8
         echo "        </div>
         <div class=\"col-md-5\">
             <h4>Пошук релізу</h4>
-            <input type=\"text\" class=\"form-control\" id=\"search-related\" data-section=\"releases\" data-id=\"";
-        // line 72
+            <div class=\"form-inline\">
+                <input type=\"text\" class=\"form-control\" id=\"search-related\" data-section=\"releases\" data-id=\"";
+        // line 73
         echo twig_escape_filter($this->env, $this->getAttribute((isset($context["releases"]) ? $context["releases"] : null), "releases_id", array()), "html", null, true);
         echo "\" placeholder=\"Шукати реліз\">
+                <label><input class='radio-inline' type='radio' name='search-by' value='release_title' checked>За назвою</label>
+                <label><input class='radio-inline' type='radio' name='search-by' value='release_tracklist'>За треклістом</label>
+            </div>
+            <div class=\"checked-list\"></div>
             <div class=\"item-list\"></div>
         </div>
     </div>
     <div class=\"form-group\">
         <input type=\"hidden\" value=\"";
-        // line 77
+        // line 82
         echo twig_escape_filter($this->env, $this->getAttribute((isset($context["releases"]) ? $context["releases"] : null), "releases_id", array()), "html", null, true);
         echo "\" name=\"id\">
         <button type=\"submit\" name=\"edit_release\" class=\"btn btn-primary\">
@@ -196,7 +201,7 @@ class __TwigTemplate_0aae967c09eba1bf4955722e30cf5e3fa1a3bf16e04ada1edb86b92cae8
 
     public function getDebugInfo()
     {
-        return array (  162 => 77,  154 => 72,  149 => 69,  133 => 65,  129 => 63,  125 => 62,  113 => 53,  106 => 49,  99 => 45,  92 => 41,  85 => 37,  78 => 33,  70 => 28,  65 => 26,  56 => 20,  48 => 15,  41 => 11,  31 => 3,  28 => 2,  11 => 1,);
+        return array (  167 => 82,  155 => 73,  149 => 69,  133 => 65,  129 => 63,  125 => 62,  113 => 53,  106 => 49,  99 => 45,  92 => 41,  85 => 37,  78 => 33,  70 => 28,  65 => 26,  56 => 20,  48 => 15,  41 => 11,  31 => 3,  28 => 2,  11 => 1,);
     }
 
     public function getSource()

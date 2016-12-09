@@ -97,12 +97,13 @@ class __TwigTemplate_96b9c8da9d146d173330964c02f059c687ac86e1657e99dd200a132a17d
         // line 40
         echo twig_escape_filter($this->env, $this->getAttribute((isset($context["artists"]) ? $context["artists"] : null), "artist_id", array()), "html", null, true);
         echo "\" data-section=\"artists\" placeholder=\"Шукати артиста\">
+            <div class=\"checked-list\"></div>
             <div class=\"item-list\"></div>
         </div>
     </div>
     <div class=\"form-group\">
         <input type=\"hidden\" value=\"";
-        // line 45
+        // line 46
         echo twig_escape_filter($this->env, $this->getAttribute((isset($context["artists"]) ? $context["artists"] : null), "artist_id", array()), "html", null, true);
         echo "\" name=\"id\">
         <button type=\"submit\" name=\"edit_artist\" class=\"btn btn-primary\">
@@ -137,7 +138,7 @@ class __TwigTemplate_96b9c8da9d146d173330964c02f059c687ac86e1657e99dd200a132a17d
 
     public function getDebugInfo()
     {
-        return array (  106 => 45,  98 => 40,  93 => 37,  77 => 33,  73 => 31,  69 => 30,  57 => 21,  50 => 17,  41 => 11,  31 => 3,  28 => 2,  11 => 1,);
+        return array (  107 => 46,  98 => 40,  93 => 37,  77 => 33,  73 => 31,  69 => 30,  57 => 21,  50 => 17,  41 => 11,  31 => 3,  28 => 2,  11 => 1,);
     }
 
     public function getSource()

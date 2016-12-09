@@ -93,12 +93,13 @@ class __TwigTemplate_d1a9eed647ef71e392c0539b324bdcee6697e387e51d1d317038425ac15
         // line 36
         echo twig_escape_filter($this->env, $this->getAttribute((isset($context["news"]) ? $context["news"] : null), "news_id", array()), "html", null, true);
         echo "\" placeholder=\"Шукати новину\">
+            <div class=\"checked-list\"></div>
             <div class=\"item-list\"></div>
         </div>
     </div>
     <div class=\"form-group\">
         <input type=\"hidden\" value=\"";
-        // line 41
+        // line 42
         echo twig_escape_filter($this->env, $this->getAttribute((isset($context["news"]) ? $context["news"] : null), "news_id", array()), "html", null, true);
         echo "\" name=\"id\" class=\"btn btn-primary\">
         <input type=\"submit\" value=\"Зберегти новину\" name=\"edit_news\" class=\"btn btn-primary\">
@@ -132,7 +133,7 @@ class __TwigTemplate_d1a9eed647ef71e392c0539b324bdcee6697e387e51d1d317038425ac15
 
     public function getDebugInfo()
     {
-        return array (  102 => 41,  94 => 36,  89 => 33,  73 => 29,  69 => 27,  65 => 26,  55 => 19,  48 => 15,  39 => 9,  31 => 3,  28 => 2,  11 => 1,);
+        return array (  103 => 42,  94 => 36,  89 => 33,  73 => 29,  69 => 27,  65 => 26,  55 => 19,  48 => 15,  39 => 9,  31 => 3,  28 => 2,  11 => 1,);
     }
 
     public function getSource()
