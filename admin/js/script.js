@@ -29,7 +29,7 @@ $(document).ready(function(){
             success : function(response){
                 var data = {};
                 data.related = false;
-                if(data.related){
+                if($.isNumeric(ajax.related)){
                     data.related = true;
                     if($('.checked-list .checkbox').length > 0){
                         removeUnchecked();
@@ -74,6 +74,7 @@ $(document).ready(function(){
                     render(response, data);
                 }else{
                     $(data.className).append('<h3>No result :(</h3>');
+                    console.log(response);
                 }
             }
         });

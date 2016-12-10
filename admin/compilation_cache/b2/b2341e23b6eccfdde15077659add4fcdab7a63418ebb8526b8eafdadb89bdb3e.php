@@ -111,7 +111,12 @@ class __TwigTemplate_816282b03e9197accec941c20542db99e03ff4499f5b9049e3458484061
         echo "        </div>
         <div class=\"col-md-5\">
             <h4>Пошук релізу</h4>
-            <input type=\"text\" class=\"form-control\" id=\"search-related\" data-id=\"-1\" data-section=\"releases\" placeholder=\"Шукати реліз\">
+            <div class=\"form-inline\">
+                <input type=\"text\" class=\"form-control\" id=\"search-related\" data-section=\"releases\" data-id=\"-1\" placeholder=\"Шукати реліз\">
+                <label><input class='radio-inline' type='radio' name='search-by' value='release_title' checked>За назвою</label>
+                <label><input class='radio-inline' type='radio' name='search-by' value='release_tracklist'>За треклістом</label>
+            </div>
+            <div class=\"checked-list\"></div>
             <div class=\"item-list\"></div>
         </div>
     </div>
