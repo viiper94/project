@@ -34,8 +34,7 @@ class DataModel extends Model{
             $data['sort'] = $result[0]['nextsort'];
             $this->db->insert($this->table, $data);
             $lastId = $this->db->getLastId();
-            $mime = $_FILES['picture']['type'] == 'image/png' ? $mime = '.png' : $mime = '.jpg';
-            $fileName = $lastId.$mime;
+            $fileName = $lastId.'jpg';
             $filePath = ROOT . '../images/'.$this->section.'/'.$fileName;
             move_uploaded_file($_FILES['picture']['tmp_name'], $filePath);
             $path[$this->columns['picture']] = $fileName;
@@ -49,8 +48,7 @@ class DataModel extends Model{
         $id = $_POST['id'];
         if(isset($_FILES['picture']['tmp_name'])){
             if(!$this->db->update($this->table, $data, $this->columns['id'], $id)) return false;
-            $mime = $_FILES['picture']['type'] == 'image/png' ? $mime = '.png' : $mime = '.jpg';
-            $fileName = $id.$mime;
+            $fileName = $id.'jpg';
             $filePath = ROOT . '../images/'.$this->section.'/'.$fileName;
             move_uploaded_file($_FILES['picture']['tmp_name'], $filePath);
             return true;
