@@ -78,40 +78,40 @@ class __TwigTemplate_956f5ba1b2858587fc2eee58d15975a261c5489a565197c547d87af676b
 \t    \t</div>
 \t\t</div>
 \t</nav>
-    ";
-        // line 36
+\t<main class=\"col-md-10 col-md-offset-1\">
+        ";
+        // line 37
         $this->displayBlock('msg', $context, $blocks);
-        // line 41
-        echo "\t<main class=\"col-md-10 col-md-offset-1\">
-\t\t";
-        // line 42
+        // line 43
+        echo "\t\t";
         $this->displayBlock('content', $context, $blocks);
-        // line 45
+        // line 46
         echo "\t</main>
 </body>
 </html>";
     }
 
-    // line 36
+    // line 37
     public function block_msg($context, array $blocks = array())
     {
-        // line 37
-        echo "        ";
+        // line 38
+        echo "            ";
         if ( !twig_test_empty((isset($context["msg"]) ? $context["msg"] : null))) {
-            // line 38
-            echo "            ";
+            // line 39
+            echo "                ";
             echo (isset($context["msg"]) ? $context["msg"] : null);
             echo "
-        ";
+                <div class=\"clearfix\"></div>
+            ";
         }
-        // line 40
-        echo "    ";
+        // line 42
+        echo "        ";
     }
 
-    // line 42
+    // line 43
     public function block_content($context, array $blocks = array())
     {
-        // line 43
+        // line 44
         echo "
    \t\t";
     }
@@ -128,7 +128,7 @@ class __TwigTemplate_956f5ba1b2858587fc2eee58d15975a261c5489a565197c547d87af676b
 
     public function getDebugInfo()
     {
-        return array (  115 => 43,  112 => 42,  108 => 40,  102 => 38,  99 => 37,  96 => 36,  90 => 45,  88 => 42,  85 => 41,  83 => 36,  73 => 31,  67 => 30,  61 => 29,  55 => 28,  49 => 27,  21 => 1,);
+        return array (  115 => 44,  112 => 43,  108 => 42,  101 => 39,  98 => 38,  95 => 37,  89 => 46,  86 => 43,  84 => 37,  73 => 31,  67 => 30,  61 => 29,  55 => 28,  49 => 27,  21 => 1,);
     }
 
     public function getSource()

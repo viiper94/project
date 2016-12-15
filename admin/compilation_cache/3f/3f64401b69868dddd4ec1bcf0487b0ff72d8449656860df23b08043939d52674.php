@@ -76,6 +76,7 @@ class __TwigTemplate_7dad142b988dac1f81918384afc965df511ac33e0c7fadbc9d8f15ca071
         <div class=\"col-md-5\">
             <h4>Пошук новин</h4>
             <input type=\"text\" class=\"form-control\" id=\"search-related\" data-section=\"news\" data-id=\"-1\" placeholder=\"Шукати новину\">
+            <div class=\"checked-list\"></div>
             <div class=\"item-list\"></div>
         </div>
     </div>

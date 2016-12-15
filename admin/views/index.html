@@ -33,12 +33,13 @@
 	    	</div>
 		</div>
 	</nav>
-    {% block msg %}
-        {% if msg is not empty %}
-            {{ msg|raw }}
-        {% endif %}
-    {% endblock %}
 	<main class="col-md-10 col-md-offset-1">
+        {% block msg %}
+            {% if msg is not empty %}
+                {{ msg|raw }}
+                <div class="clearfix"></div>
+            {% endif %}
+        {% endblock %}
 		{% block content %}
 
    		{% endblock %}

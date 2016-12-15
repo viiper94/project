@@ -29,7 +29,7 @@ class __TwigTemplate_10122b2a8ecd95b0860dd17bc3d04c7ee875b842431aa066a20dadcad66
     {
         // line 3
         echo "<div class=\"news-container\">
-\t<h1>Requested page not found</h1>
+\t<h1>Сторінку не знайдено</h1>
 \t<img style=\"width: 95%\" src=\"/assets/img/404.png\">
 </div>
 ";
