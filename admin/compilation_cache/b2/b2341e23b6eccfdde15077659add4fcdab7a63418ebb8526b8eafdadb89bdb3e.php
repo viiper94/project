@@ -46,7 +46,7 @@ class __TwigTemplate_816282b03e9197accec941c20542db99e03ff4499f5b9049e3458484061
         <div class=\"col-md-4\">
             <label class=\"control-label\" style=\"margin-left: -15px;\">Обкладинка</label>
             <input type=\"hidden\" name=\"MAX_FILE_SIZE\" value=\"30000000\">
-            <input type=\"file\" accept=\"image/jpeg, image/png\" name=\"picture\" style=\"margin-left: -15px;\"\" required>
+            <input type=\"file\" accept=\"image/jpeg, image/png\" name=\"picture\" style=\"margin-left: -15px;\" required>
         </div>
         <div class=\"col-md-4\">
             <label for=\"date\" class=\"control-label\">Дата релізу</label>
@@ -94,7 +94,7 @@ class __TwigTemplate_816282b03e9197accec941c20542db99e03ff4499f5b9049e3458484061
             // line 62
             echo "            <div class=\"checkbox\">
                 <label>
-                    <input type=\"checkbox\" name=\"related\" value=\"";
+                    <input type=\"checkbox\" name=\"related[]\" value=\"";
             // line 64
             echo twig_escape_filter($this->env, $this->getAttribute($context["item"], "releases_id", array()), "html", null, true);
             echo "\"> ";

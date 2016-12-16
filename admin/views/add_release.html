@@ -61,7 +61,7 @@
             {% for item in related %}
             <div class="checkbox">
                 <label>
-                    <input type="checkbox" name="related" value="{{ item.releases_id }}"> {{ item.release_title }}
+                    <input type="checkbox" name="related[]" value="{{ item.releases_id }}"> {{ item.release_title }}
                 </label>
             </div>
             {% endfor %}
