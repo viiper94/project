@@ -2,24 +2,12 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="9b08e53f-9d2e-4e18-a33a-e3b71617b918" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/assets/img/prices-1.jpg" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/assets/img/prices-2.jpg" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/assets/img/prices-3.jpg" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/assets/img/prices-4.jpg" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/assets/img/prices-5.jpg" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/assets/img/prices-6.jpg" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/assets/img/404.jpg" afterPath="" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/assets/css/style.css" afterPath="$PROJECT_DIR$/assets/css/style.css" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/assets/js/script.js" afterPath="$PROJECT_DIR$/assets/js/script.js" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/compilation_cache/01/01d128fe242cbfe105848b7d23c2b26f142ec5c7b46f5aee0e28cb9e5aa6e9d4.php" afterPath="$PROJECT_DIR$/compilation_cache/01/01d128fe242cbfe105848b7d23c2b26f142ec5c7b46f5aee0e28cb9e5aa6e9d4.php" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/compilation_cache/56/56437251433068130f0a05f8505efe3822f4936ff29ec9cb2ccdaa9204a13a4f.php" afterPath="$PROJECT_DIR$/compilation_cache/56/56437251433068130f0a05f8505efe3822f4936ff29ec9cb2ccdaa9204a13a4f.php" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/compilation_cache/7c/7c49ce34471be9c1c0f4a97b23ae516938889b518cba4f7017740aaec1d53bc4.php" afterPath="$PROJECT_DIR$/compilation_cache/7c/7c49ce34471be9c1c0f4a97b23ae516938889b518cba4f7017740aaec1d53bc4.php" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/compilation_cache/a5/a58990fa3c04a1edec5db88fee5db369e7ca61e9e4d952031e7f9461af1956d0.php" afterPath="$PROJECT_DIR$/compilation_cache/a5/a58990fa3c04a1edec5db88fee5db369e7ca61e9e4d952031e7f9461af1956d0.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/views/about.html" afterPath="$PROJECT_DIR$/views/about.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/views/contacts.html" afterPath="$PROJECT_DIR$/views/contacts.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/views/index.html" afterPath="$PROJECT_DIR$/views/index.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/views/school.html" afterPath="$PROJECT_DIR$/views/school.html" />
     </list>
     <ignored path="decrypt.php" />
     <ignored path=".idea/" />
@@ -380,7 +368,7 @@
       <workItem from="1481840349000" duration="212000" />
       <workItem from="1481904058172" duration="2297000" />
       <workItem from="1482137837367" duration="2217000" />
-      <workItem from="1482156307264" duration="4541000" />
+      <workItem from="1482156307264" duration="4608000" />
     </task>
     <task id="LOCAL-00001" summary="added space">
       <created>1480855440067</created>
@@ -557,11 +545,18 @@
       <option name="project" value="LOCAL" />
       <updated>1482143229175</updated>
     </task>
-    <option name="localTasksCounter" value="26" />
+    <task id="LOCAL-00026" summary="create school page">
+      <created>1482160931491</created>
+      <option name="number" value="00026" />
+      <option name="presentableId" value="LOCAL-00026" />
+      <option name="project" value="LOCAL" />
+      <updated>1482160931491</updated>
+    </task>
+    <option name="localTasksCounter" value="27" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="224078000" />
+    <option name="totallyTimeSpent" value="224145000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -652,7 +647,8 @@
     <MESSAGE value="fixed admin alert size" />
     <MESSAGE value="change text to ukrainian" />
     <MESSAGE value="new images" />
-    <option name="LAST_COMMIT_MESSAGE" value="new images" />
+    <MESSAGE value="create school page" />
+    <option name="LAST_COMMIT_MESSAGE" value="create school page" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
