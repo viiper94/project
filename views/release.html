@@ -27,7 +27,7 @@
 	<div class="right pull-right">
 		<div class="release-nav text-center">
 			<a {% if prev is not empty %}href="/releases/{{ prev.releases_id }}"{% endif %} class="glyphicon glyphicon-menu-left{% if prev.releases_id is empty %} disabled{% endif %}"></a>
-			<span>Search releases</span>
+			<span>Шукати реліз</span>
 			<a {% if next is not empty %}href="/releases/{{ next.releases_id }}"{% endif %}  class="glyphicon glyphicon-menu-right{% if next.releases_id is empty %} disabled{% endif %}"></a>
 		</div>
 		<div class="release-description">
