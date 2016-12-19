@@ -76,6 +76,7 @@ class __TwigTemplate_5f27e879af85e79b534fabd0a41524c73cf40eea3bb61eda54d09729dd5
         <div class=\"col-md-5\">
             <h4>Пошук артистів</h4>
             <input type=\"text\" class=\"form-control\" id=\"search-related\" data-id=\"-1\" data-section=\"artists\" placeholder=\"Шукати артиста\">
+            <div class=\"checked-list\"></div>
             <div class=\"item-list\"></div>
         </div>
     </div>

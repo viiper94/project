@@ -24,11 +24,11 @@ class View{
 	}
 
     static function okMsg($msg){
-        return "<div class='alert alert-success col-md-10 col-md-offset-1'>$msg</div>";
+        return "<div class='alert alert-success'>$msg</div>";
     }
 
     static function errMsg($msg){
-        return "<div class='alert alert-danger col-md-10 col-md-offset-1'>$msg</div>";
+        return "<div class='alert alert-danger'>$msg</div>";
     }
     
 }
