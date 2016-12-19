@@ -29,10 +29,10 @@
 							<li {% if controller == 'artists' %}class="active"{% endif %}><a href="/artists">АРТИСТИ</a></li>
 							<li {% if controller == 'school' %}class="active"{% endif %} id="dropdown"><a href="/school">ШКОЛА</a>
 								<ul class="dropdown hidden-xs">
-                                    <li><a href="/school">ПРО КУРСИ</a></li>
-                                    <li><a href="/school">ОБЛАДНАННЯ</a></li>
-                                    <li><a href="/school">ЦІНИ</a></li>
-                                    <li><a href="/school">КОНТАКТИ</a></li>
+                                    <li><a href="/school#about">ПРО КУРСИ</a></li>
+                                    <li><a href="/school#equipment">ОБЛАДНАННЯ</a></li>
+                                    <li><a href="/school#prices">ЦІНИ</a></li>
+                                    <li><a href="/school#contact">КОНТАКТИ</a></li>
 								</ul>
 							</li>
 							<li {% if controller == 'about' %}class="active"{% endif %}><a href="/about">ПРО НАС</a></li>
@@ -52,6 +52,7 @@
 			{% block content %}
 
    			{% endblock %}
+            <div class="clearfix"></div>
    		</main>
 		<footer>
 			<div class="partners">

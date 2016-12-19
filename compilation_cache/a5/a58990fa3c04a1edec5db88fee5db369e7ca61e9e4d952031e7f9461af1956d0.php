@@ -82,10 +82,10 @@ class __TwigTemplate_159eb1db8d163257ac7f8d15e32dbb495f6d83eca144413f62d0c49e480
         }
         echo " id=\"dropdown\"><a href=\"/school\">ШКОЛА</a>
 \t\t\t\t\t\t\t\t<ul class=\"dropdown hidden-xs\">
-                                    <li><a href=\"/school\">ПРО КУРСИ</a></li>
-                                    <li><a href=\"/school\">ОБЛАДНАННЯ</a></li>
-                                    <li><a href=\"/school\">ЦІНИ</a></li>
-                                    <li><a href=\"/school\">КОНТАКТИ</a></li>
+                                    <li><a href=\"/school#about\">ПРО КУРСИ</a></li>
+                                    <li><a href=\"/school#equipment\">ОБЛАДНАННЯ</a></li>
+                                    <li><a href=\"/school#prices\">ЦІНИ</a></li>
+                                    <li><a href=\"/school#contact\">КОНТАКТИ</a></li>
 \t\t\t\t\t\t\t\t</ul>
 \t\t\t\t\t\t\t</li>
 \t\t\t\t\t\t\t<li ";
@@ -116,7 +116,8 @@ class __TwigTemplate_159eb1db8d163257ac7f8d15e32dbb495f6d83eca144413f62d0c49e480
         // line 52
         $this->displayBlock('content', $context, $blocks);
         // line 55
-        echo "   \t\t</main>
+        echo "            <div class=\"clearfix\"></div>
+   \t\t</main>
 \t\t<footer>
 \t\t\t<div class=\"partners\">
 \t\t\t\t<p>PARTNERS:</p>
@@ -169,7 +170,7 @@ class __TwigTemplate_159eb1db8d163257ac7f8d15e32dbb495f6d83eca144413f62d0c49e480
 
     public function getDebugInfo()
     {
-        return array (  156 => 53,  153 => 52,  119 => 55,  117 => 52,  99 => 39,  93 => 38,  80 => 30,  74 => 29,  68 => 28,  62 => 27,  41 => 13,  30 => 9,  20 => 1,);
+        return array (  157 => 53,  154 => 52,  119 => 55,  117 => 52,  99 => 39,  93 => 38,  80 => 30,  74 => 29,  68 => 28,  62 => 27,  41 => 13,  30 => 9,  20 => 1,);
     }
 
     public function getSource()

@@ -28,7 +28,7 @@ class __TwigTemplate_18d9bc7abd618ace1f85cf62f0786b070be0497e2830db68b6ae276f28a
     public function block_content($context, array $blocks = array())
     {
         // line 3
-        echo "<div class=\"news-container\">
+        echo "<div class=\"release-container\">
 \t<p class=\"about\">Про Damage Records</p>
 \t<article>
 \t";
