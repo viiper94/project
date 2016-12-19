@@ -16,6 +16,7 @@ class ReleasesController extends Controller{
         if(!empty($_GET['id'])){
             $id = $_GET['id'];
             $data['item'] = $this->model->getDataById($id);
+            $data['item']['release_tracklist'] = str_replace('\r\n', NULL, $data['item']['release_tracklist']);
             $data['related'] = $this->model->getRelatedData($id);
             $data['next'] = $this->model->getNextData($id);
             $data['prev'] = $this->model->getPrevData($id);

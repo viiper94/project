@@ -112,6 +112,7 @@ class ReleasesController extends Controller{
         } else{
             $data['related'] = $this->model->getAllRelatedData();
             $data['releases'] = $this->model->getDataById();
+            $data['releases']['release_tracklist'] = str_replace('\r\n', NULL, $data['releases']['release_tracklist']);
             View::renderPage('edit_release', $data);
         }
     }

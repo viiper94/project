@@ -87,7 +87,7 @@ class __TwigTemplate_5589fba44058cbcc0fd8aed75c78cc2a501bbc92c88d4681d32c2eac08d
             echo " disabled";
         }
         echo "\"></a>
-\t\t\t<span>Search releases</span>
+\t\t\t<span>Шукати реліз</span>
 \t\t\t<a ";
         // line 31
         if ( !twig_test_empty((isset($context["next"]) ? $context["next"] : null))) {
