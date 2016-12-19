@@ -1,11 +1,19 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="9b08e53f-9d2e-4e18-a33a-e3b71617b918" name="Default" comment="fixed add related releases">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/dataSources.xml" afterPath="$PROJECT_DIR$/.idea/dataSources.xml" />
+    <list default="true" id="9b08e53f-9d2e-4e18-a33a-e3b71617b918" name="Default" comment="">
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/images/artists/21.jpg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/images/artists/22.jpg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/images/artists/23.jpg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/images/news/21.jpg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/images/releases/15.jpg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/images/releases/16.jpg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/images/releases/17.jpg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/images/releases/18.jpg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/images/releases/19.jpg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/images/releases/20.jpg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/images/releases/21.jpg" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/admin/classes/View.php" afterPath="$PROJECT_DIR$/admin/classes/View.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/admin/compilation_cache/58/58ee6ac6a36533aa74b862719dec98e57389daf6336afc208c0ef44f4fb3ca2a.php" afterPath="$PROJECT_DIR$/admin/compilation_cache/58/58ee6ac6a36533aa74b862719dec98e57389daf6336afc208c0ef44f4fb3ca2a.php" />
     </list>
     <ignored path="decrypt.php" />
     <ignored path=".idea/" />
@@ -35,11 +43,21 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="View.php" pinned="false" current-in-tab="true">
+      <file leaf-file-name="View.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/admin/classes/View.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="561">
-              <caret line="33" column="1" selection-start-line="33" selection-start-column="1" selection-end-line="33" selection-end-column="1" />
+            <state relative-caret-position="476">
+              <caret line="28" column="0" selection-start-line="28" selection-start-column="0" selection-end-line="28" selection-end-column="0" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="release.html" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/views/release.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="495">
+              <caret line="43" column="28" selection-start-line="43" selection-start-column="28" selection-end-line="43" selection-end-column="28" />
               <folding />
             </state>
           </provider>
@@ -102,8 +120,8 @@
         <option value="$PROJECT_DIR$/admin/views/index.html" />
         <option value="$PROJECT_DIR$/admin/classes/models/DataModel.php" />
         <option value="$PROJECT_DIR$/admin/views/add_release.html" />
-        <option value="$PROJECT_DIR$/views/release.html" />
         <option value="$PROJECT_DIR$/admin/classes/View.php" />
+        <option value="$PROJECT_DIR$/views/release.html" />
       </list>
     </option>
   </component>
@@ -198,38 +216,6 @@
               <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
             </PATH_ELEMENT>
           </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="project" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="project" />
-              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="admin" />
-              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="project" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="project" />
-              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="admin" />
-              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="classes" />
-              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
-            </PATH_ELEMENT>
-          </PATH>
         </subPane>
       </pane>
     </panes>
@@ -317,7 +303,7 @@
       <workItem from="1481837950091" duration="910000" />
       <workItem from="1481840349000" duration="212000" />
       <workItem from="1481904058172" duration="2297000" />
-      <workItem from="1482137837367" duration="2025000" />
+      <workItem from="1482137837367" duration="2138000" />
     </task>
     <task id="LOCAL-00001" summary="added space">
       <created>1480855440067</created>
@@ -473,11 +459,25 @@
       <option name="project" value="LOCAL" />
       <updated>1482143096996</updated>
     </task>
-    <option name="localTasksCounter" value="23" />
+    <task id="LOCAL-00023" summary="fixed admin alert size">
+      <created>1482143128390</created>
+      <option name="number" value="00023" />
+      <option name="presentableId" value="LOCAL-00023" />
+      <option name="project" value="LOCAL" />
+      <updated>1482143128390</updated>
+    </task>
+    <task id="LOCAL-00024" summary="change text to ukrainian">
+      <created>1482143179064</created>
+      <option name="number" value="00024" />
+      <option name="presentableId" value="LOCAL-00024" />
+      <option name="project" value="LOCAL" />
+      <updated>1482143179065</updated>
+    </task>
+    <option name="localTasksCounter" value="25" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="219345000" />
+    <option name="totallyTimeSpent" value="219458000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -566,7 +566,9 @@
     <MESSAGE value="new images" />
     <MESSAGE value="database backup 15.12.16" />
     <MESSAGE value="update database" />
-    <option name="LAST_COMMIT_MESSAGE" value="update database" />
+    <MESSAGE value="fixed admin alert size" />
+    <MESSAGE value="change text to ukrainian" />
+    <option name="LAST_COMMIT_MESSAGE" value="change text to ukrainian" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -891,13 +893,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/views/release.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="609">
-          <caret line="53" column="14" selection-start-line="53" selection-start-column="14" selection-end-line="53" selection-end-column="14" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/classes/Controller.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="136">
@@ -932,8 +927,16 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/admin/classes/View.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="561">
-          <caret line="33" column="1" selection-start-line="33" selection-start-column="1" selection-end-line="33" selection-end-column="1" />
+        <state relative-caret-position="476">
+          <caret line="28" column="0" selection-start-line="28" selection-start-column="0" selection-end-line="28" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/views/release.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="495">
+          <caret line="43" column="28" selection-start-line="43" selection-start-column="28" selection-end-line="43" selection-end-column="28" />
           <folding />
         </state>
       </provider>
