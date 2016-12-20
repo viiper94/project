@@ -44,4 +44,32 @@ $(document).ready(function(){
         });
     });
     
+    $(document).on('submit', '#contact-form', function(){
+        event.preventDefault();
+        var email = $('input[name=email]').val();
+        var name = $('input[name=name]').val();
+        var secondName = $('input[name=second-name]').val();
+        var message = $('textarea').val();
+        $.ajax({
+            cache: false,
+            dataType : 'json',
+            type : 'POST',
+            url : '/school',
+            data : {
+                'ajax' : 'true',
+                'email' : email,
+                'name' : name,
+                'second-name' : secondName,
+                'message' : message
+            },
+            success : function(response){
+                if(response.status == 'OK'){
+                    alert('Успішно відправлено!');
+                } else{
+                    alert(response.status);
+                }
+            }
+        });
+    });
+    
 });

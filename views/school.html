@@ -62,14 +62,14 @@
     <div class="clearfix"></div>
     <div class="contact">
         <h3 class="school-header" id="contact">ЗВ'ЯЗАТИСЯ З НАМИ</h3>
-        <p>Якщо ви хочете зв'язатися з нами, ви можете використати форму нижче. Заповніть його повністю і натисніть кнопку Надіслати. Ми намагаємося читати кожен лист електронної пошти, що відправляється нам, і відповідаємо на більшість з них. Конкретні питання, більш імовірно, отримають відповідь швидше, ніж загальні питання.</p>
+        <p>Якщо ви хочете зв'язатися з нами, ви можете використати форму нижче. Заповніть її повністю і натисніть кнопку Надіслати. Ми намагаємося читати кожен лист електронної пошти, що відправляється нам, і відповідаємо на більшість з них. Конкретні питання, більш імовірно, отримають відповідь швидше, ніж загальні питання.</p>
         <div class="contact-form">
-            <form action="#" method="POST">
-                <input type="text" name="first-name" placeholder="Ім'я">
+            <form method="POST" id="contact-form">
+                <input type="text" name="name" placeholder="Ім'я" required>
                 <input type="text" name="second-name" placeholder="Прізвище">
-                <input type="email" name="email" placeholder="E-Mail">
-                <textarea name="message" cols="30" rows="10" placeholder="Повідомлення"></textarea>
-                <button type="submit">Відправити</button>
+                <input type="email" name="email" placeholder="E-Mail" required>
+                <textarea name="message" cols="30" rows="10" placeholder="Повідомлення" required></textarea>
+                <button type="submit">Надіслати</button>
             </form>
         </div>
     </div>
