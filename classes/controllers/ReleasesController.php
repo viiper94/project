@@ -21,7 +21,7 @@ class ReleasesController extends Controller{
             $data['next'] = $this->model->getNextData($id);
             $data['prev'] = $this->model->getPrevData($id);
             $data['title'] = $data['item']['release_title'].' - Damage Release';
-            View::generateView('release', $data);
+            $view = 'release';
         } else{
             $data = $this->model->getSortedData(array(
                 'releases_id',
@@ -31,7 +31,13 @@ class ReleasesController extends Controller{
                 'sort'
             ), 20);
             $data['title'] = 'Damage Releases';
-            View::generateView('releases', $data);
+            $view = 'releases';
+        }
+        if(isset($_GET['ajax'])){
+            $data['status'] = 'OK';
+            echo json_encode($data);
+        }else{
+            View::generateView($view, $data);
         }
     }
 	

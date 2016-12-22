@@ -8,11 +8,16 @@ class AboutController extends Controller{
     }
 
 	function actionAbout(){
-        if($_POST['ajax'] == 'true') $this->actionSubscribe();
+        if(isset($_POST['ajax'])) $this->actionSubscribe();
         else{
             $data['text'] = $this->model->getDataByColumn(array('text'), 'category', 'about');
             $data['title'] = 'About Damage';
-            View::generateView('about', $data);
+            if(isset($_GET['ajax'])){
+                $data['status'] = 'OK';
+                echo json_encode($data);
+            }else{
+                View::generateView('about', $data);
+            }
         }
 	}
 	

@@ -72,4 +72,53 @@ $(document).ready(function(){
         });
     });
     
+    $(document).on('click', '.ajaxable', function(){
+        event.preventDefault();
+        var target = $(this).attr('data-target');
+        var page = $(this).attr('data-page');
+        var id = $(this).attr('data-id');
+        var section = id == undefined ? target+'-list' : target;
+        //console.log(this);
+        $.ajax({
+            cache: false,
+            dataType : 'json',
+            type : 'GET',
+            url : '/'+target,
+            data : {
+                'ajax': 'true',
+                'page' : page,
+                'id' : id
+            },
+            success : function(response){
+                if(response.status == 'OK'){
+                    clearMain();
+                    render(section, response);
+                    if(response.pgn != undefined) pagination(target, response.pgn);
+                }else{
+                    alert(response.status);
+                }
+            }
+        })
+    });
+
+    function clearMain(){
+        $('main').html('');
+    }
+
+    function render(tmpl, data){
+        var template = _.template($('#'+tmpl+'-template').html())(data);
+        //console.log(data);
+        $('main').append(template);
+    }
+    
+    function pagination(controller, pages){
+        //console.log(pages);
+        var data = {
+            'pgn' : pages,
+            'controller' : controller
+        };
+        var html = _.template($('#pagination-template').html())(data);
+        $('main').append(html);
+    }
+    
 });

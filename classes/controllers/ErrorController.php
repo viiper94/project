@@ -5,7 +5,12 @@ class ErrorController extends Controller{
 	
 	static public function actionError(){
         $data['title'] = 'Error - Page not found';
-		View::generateView('404', $data);
+        if(isset($_GET['ajax'])){
+            $data['status'] = 'OK';
+            echo json_encode($data);
+        }else{
+            View::generateView('404', $data);
+        }
 	}
 	
 }

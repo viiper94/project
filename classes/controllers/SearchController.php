@@ -45,7 +45,12 @@ class SearchController extends Controller{
                 'sort'
             ));
             //Kint::dump($data);
-            View::generateView('search', $data);
+            if(isset($_GET['ajax'])){
+                $data['status'] = 'OK';
+                echo json_encode($data);
+            }else{
+                View::generateView('search', $data);
+            }
         } else{
             $news = new NewsController();
             $news->actionNews();

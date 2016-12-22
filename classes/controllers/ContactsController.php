@@ -10,7 +10,12 @@ class ContactsController extends Controller{
     function actionContacts(){
         $data['text'] = $this->model->getDataByColumn(array('text'), 'category', 'contacts');
         $data['title'] = 'About Contacts';
-        View::generateView('contacts', $data);
+        if(isset($_GET['ajax'])){
+            $data['status'] = 'OK';
+            echo json_encode($data);
+        }else{
+            View::generateView('contacts', $data);
+        }
     }
 	
 }

@@ -4,11 +4,17 @@ require_once CLASS_DIR . '/Controller.php';
 class SchoolController extends Controller{
 	
 	function actionSchool(){
-        if($_POST['ajax'] == 'true'){
+        if(isset($_POST['ajax'])){
             $this->sendEmail();
         }else{
             $data['title'] = 'Школа Damage Records';
-            View::generateView('school', $data);
+            if(isset($_GET['ajax'])){
+                $data['status'] = 'OK';
+                $data['html'] = View::returnView('school-root', $data);
+                echo json_encode($data);
+            }else{
+                View::generateView('school', $data);
+            }
         }
 	}
 

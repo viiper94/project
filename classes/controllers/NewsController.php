@@ -18,7 +18,7 @@ class NewsController extends Controller{
             $data['item'] = $this->model->getDataById($id);
             $data['related'] = $this->model->getRelatedData($id);
             $data['title'] = $data['item']['news_title'].' - Damage News';
-            View::generateView('news', $data);
+            $view = 'news';
         } else{
             $data = $this->model->getSortedData(array(
                 'news_id',
@@ -28,7 +28,13 @@ class NewsController extends Controller{
                 'sort'
             ), 10);
             $data['title'] = 'Damage News';
-            View::generateView('main', $data);
+            $view = 'main';
+        }
+        if(isset($_GET['ajax'])){
+            $data['status'] = 'OK';
+            echo json_encode($data);
+        }else{
+            View::generateView($view, $data);
         }
     }
 

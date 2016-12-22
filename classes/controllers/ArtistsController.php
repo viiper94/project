@@ -18,7 +18,7 @@ class ArtistsController extends Controller{
             $data['artist'] = $this->model->getDataById($id);
             $data['related'] = $this->model->getRelatedData($id);
             $data['title'] = $data['artist']['artist_name'].' - Damage';
-            View::generateView('artist', $data);
+            $view = 'artist';
         } else{
             $data = $this->model->getSortedData(array(
                 'artist_id',
@@ -27,7 +27,13 @@ class ArtistsController extends Controller{
                 'sort'
             ), 20);
             $data['title'] = 'Damage Artists';
-            View::generateView('artists', $data);
+            $view = 'artists';
+        }
+        if(isset($_GET['ajax'])){
+            $data['status'] = 'OK';
+            echo json_encode($data);
+        }else{
+            View::generateView($view, $data);
         }
     }
 	

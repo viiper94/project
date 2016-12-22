@@ -20,7 +20,9 @@ a:not(.disabled):hover{color: #d20023;}
 .navbar-default .navbar-nav .active>a{box-shadow: inset 0px 0px 0px 3px #d20023; background-color: inherit;
 	color: #fff; transition: 0.5s background-color;}
 .navbar-default .navbar-nav li a:hover{background-color: #d20023; color: #fff; transition: 0.4s background-color;}
+.navbar-default .navbar-nav li a:focus{color: #fff;}
 .navbar-default .navbar-nav .active a:hover{background-color: #d20023; color: #fff;}
+.navbar-default .navbar-nav .active a:focus{background-color: inherit; color: #fff;}
 #dropdown{position: relative;}
 #dropdown ul{position: absolute; background-color: #000; min-width: 175px; color: #fff;
 	display: none; z-index: 1;}
