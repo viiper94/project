@@ -2,7 +2,7 @@
 {% block content %}
 {% for item in news %}
 <div class="item item-block" style="background-image: url(/images/news/{{ item.news_title_picture }});">
-	<a href="/news/{{ item.news_id }}">
+	<a href="/news/{{ item.news_id }}" data-id="{{ item.news_id }}" data-target="news" class="ajaxable">
 		<div class="overlay">
 			<div class="date">
 				<span>{{ item.news_date }}</span>

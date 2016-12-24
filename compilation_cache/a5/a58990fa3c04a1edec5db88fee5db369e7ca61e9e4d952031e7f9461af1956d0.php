@@ -82,10 +82,10 @@ class __TwigTemplate_159eb1db8d163257ac7f8d15e32dbb495f6d83eca144413f62d0c49e480
         }
         echo " id=\"dropdown\"><a href=\"/school\" class=\"ajaxable\" data-target=\"school\">ШКОЛА</a>
 \t\t\t\t\t\t\t\t<ul class=\"dropdown hidden-xs\">
-                                    <li><a href=\"/school#about\" data-target=\"school\">ПРО КУРСИ</a></li>
-                                    <li><a href=\"/school#equipment\" data-target=\"school\">ОБЛАДНАННЯ</a></li>
-                                    <li><a href=\"/school#prices\" data-target=\"school\">ЦІНИ</a></li>
-                                    <li><a href=\"/school#contact\" data-target=\"school\">ЗВОРОТНІЙ ЗВ'ЯЗОК</a></li>
+                                    <li><a href=\"/school#about\" class=\"ajaxable\" data-target=\"school\">ПРО КУРСИ</a></li>
+                                    <li><a href=\"/school#equipment\" class=\"ajaxable\" data-target=\"school\">ОБЛАДНАННЯ</a></li>
+                                    <li><a href=\"/school#prices\" class=\"ajaxable\" data-target=\"school\">ЦІНИ</a></li>
+                                    <li><a href=\"/school#contact\" class=\"ajaxable\" data-target=\"school\">ЗВОРОТНІЙ ЗВ'ЯЗОК</a></li>
 \t\t\t\t\t\t\t\t</ul>
 \t\t\t\t\t\t\t</li>
 \t\t\t\t\t\t\t<li ";
@@ -102,9 +102,9 @@ class __TwigTemplate_159eb1db8d163257ac7f8d15e32dbb495f6d83eca144413f62d0c49e480
         echo "><a href=\"/contacts\" class=\"ajaxable\" data-target=\"contacts\">КОНТАКТИ</a></li>
 \t\t\t\t\t\t</ul>
 \t\t\t\t\t\t<div class=\"search-box\">
-                            <form action=\"/search/\" method=\"GET\">
-                                <input type=\"text\" name=\"q\" placeholder=\"Пошук\" minlength=\"3\">
-                                <button data-target=\"search\"><span class=\"glyphicon glyphicon-search ajaxable\"></span></button>
+                            <form action=\"/search/\" method=\"GET\" id=\"search-form\">
+                                <input type=\"text\" name=\"q\" placeholder=\"Пошук\" minlength=\"3\" autocomplete=\"off\">
+                                <button data-target=\"search\"><span class=\"glyphicon glyphicon-search\"></span></button>
                             </form>
 \t\t\t\t\t\t</div>
 \t\t\t\t\t</div>
@@ -185,7 +185,7 @@ class __TwigTemplate_159eb1db8d163257ac7f8d15e32dbb495f6d83eca144413f62d0c49e480
     <script type=\"text/html\" id=\"news-list-template\">
         <% news.forEach(function(item) { %>
         <div class=\"item item-block\" style=\"background-image: url(/images/news/<%=item.news_title_picture%>);\">
-            <a href=\"/news/<%=item.news_id%>\">
+            <a href=\"/news/<%=item.news_id%>\" data-id=\"<%=item.news_id%>\" data-target=\"news\" class=\"ajaxable\">
                 <div class=\"overlay\">
                     <div class=\"date\">
                         <span><%=item.news_date%></span>
@@ -202,7 +202,7 @@ class __TwigTemplate_159eb1db8d163257ac7f8d15e32dbb495f6d83eca144413f62d0c49e480
     <script type=\"text/html\" id=\"releases-list-template\">
         <% releases.forEach(function(item) { %>
         <div class=\"item\" style=\"background-image: url(/images/releases/<%=item.release_cover%>);\">
-            <a href=\"/releases/<%=item.releases_id%>\">
+            <a href=\"/releases/<%=item.releases_id%>\" data-id=\"<%=item.releases_id%>\" data-target=\"releases\" class=\"ajaxable\">
                 <div class=\"overlay\">
                     <div class=\"title\">
                         <h4><%=item.release_artist%></h4>
@@ -255,6 +255,115 @@ class __TwigTemplate_159eb1db8d163257ac7f8d15e32dbb495f6d83eca144413f62d0c49e480
     <script type=\"text/html\" id=\"school-list-template\">
         <%=html%>
     </script>
+    <script type=\"text/html\" id=\"search-template\">
+        <% if(newsTemplate != undefined){ %>
+            <h3 class=\"search-header\">Знайдені новини:</h3>
+            <%=newsTemplate%>
+        <% } %>
+        <% if(releasesTemplate != undefined){ %>
+            <h3 class=\"search-header\">Знайдені релізи:</h3>
+            <%=releasesTemplate%>
+            <div class=\"clearfix\"></div>
+        <% } %>
+        <% if(artistsTemplate != undefined){ %>
+            <h3 class=\"search-header\">Знайдені артисти:</h3>
+            <%=artistsTemplate%>
+            <div class=\"clearfix\"></div>
+        <% }else{ %>
+            <h1>Нічого не знайдено</h1>
+        <% } %>
+    </script>
+    <script type=\"text/html\" id=\"news-template\">
+        <div class=\"news-container\">
+            <h2><%=item.news_title%></h2>
+            <article>
+                <span><%=item.news_article%></span>
+            </article>
+            <div class=\"sharers\">
+                <a href=\"#\" class=\"share-fb\"></a>
+                <a href=\"#\" class=\"share-twitter\"></a>
+                <a href=\"#\" class=\"share-vk\"></a>
+                <a href=\"#\" class=\"share-mail\"></a>
+            </div>
+            <% if(\$(related).length > 0){ %>
+            <div class=\"related\">
+                <span>Схожі новини:</span>
+                <div class=\"clearfix\"></div>
+                <% _.each(related, function(item){ %>
+                <div class=\"item related-item\" style=\"background-image: url(/images/news/<%=item.news_title_picture%>);\">
+                    <a href=\"/news/<%=item.news_id%>\">
+                        <div class=\"overlay\">
+                            <div class=\"title\">
+                                <span><%=item.news_title%></span>
+                            </div>
+                        </div>
+                    </a>
+                </div>
+                <% }) %>
+                <div class=\"clearfix\"></div>
+            </div>
+            <% } %>
+        </div>
+    </script>
+    <script type=\"text/html\" id=\"releases-template\">
+        <div class=\"release-container\">
+            <div class=\"left pull-left\">
+                <div class=\"release-info\">
+                    <p class=\"artist\"><%=item.release_artist%></p>
+                    <p class=\"title\"><%=item.release_title%></p>
+                </div>
+                <div class=\"release-cover\">
+                    <img src=\"/images/releases/<%=item.release_cover%>\" class=\"img-responsive\">
+                </div>
+                <div class=\"release-listen\">
+                    <p>Listen and download:</p>
+                    <a href=\"<%=item.release_itunes%>\" class=\"itunes\" target=\"_blank\"></a>
+                    <a href=\"<%=item.release_gplay%>\" class=\"gplay\" target=\"_blank\"></a>
+                    <a href=\"<%=item.release_spotify%>\" class=\"spotify\" target=\"_blank\"></a>
+                    <a href=\"<%=item.release_deezer%>\" class=\"deezer\" target=\"_blank\"></a>
+                </div>
+                <div class=\"sharers\">
+                    <p>Share:</p>
+                    <a href=\"#\" class=\"share-fb\"></a>
+                    <a href=\"#\" class=\"share-twitter\"></a>
+                    <a href=\"#\" class=\"share-vk\"></a>
+                    <a href=\"#\" class=\"share-mail\"></a>
+                </div>
+            </div>
+            <div class=\"right pull-right\">
+                <div class=\"release-nav text-center\">
+                    <a <% if(prev != undefined){ %>data-target=\"releases\" data-id=\"<%=prev.releases_id%>\" href=\"/releases/<%=prev.releases_id%>\"<% } %> class=\"glyphicon glyphicon-menu-left<% if(prev == undefined){ %> disabled<% } %><% if(prev != undefined){ %> ajaxable<% } %>\"></a>
+                    <span>Шукати реліз</span>
+                    <a <% if(next != undefined){ %>data-target=\"releases\" data-id=\"<%=next.releases_id%>\" href=\"/releases/<%=next.releases_id%>\"<% } %> class=\"glyphicon glyphicon-menu-right<% if(next == undefined){ %> disabled<% } %><% if(next != undefined){ %> ajaxable<% } %>\"></a>
+                </div>
+                <div class=\"release-description\">
+                    <%=item.release_description%>
+                </div>
+                <div class=\"release-tracklist\">
+                    <h3>Трекліст:</h3>
+                    <%=item.release_tracklist%>
+                </div>
+            </div>
+            <div class=\"clearfix\"></div>
+            <% if(\$(related).length > 0){ %>
+            <div class=\"related\">
+                <p>Схожі релізи:</p>
+                <% _.each(related, function(rel){ %>
+                <div class=\"item related-item\" style=\"background-image: url(/images/releases/<%=rel.release_cover%>);\">
+                    <a href=\"/releases/<%=rel.releases_id%>\">
+                        <div class=\"overlay\">
+                            <div class=\"title\">
+                                <span><%=rel.release_title%></span>
+                            </div>
+                        </div>
+                    </a>
+                </div>
+                <% }) %>
+                <div class=\"clearfix\"></div>
+            </div>
+            <% } %>
+        </div>
+    </script>
 \t<script src=\"/assets/js/jquery.min.js\"></script>
 \t<script src=\"/assets/js/jquery.sticky.js\"></script>
 \t<script src=\"/assets/bootstrap/js/bootstrap.min.js\"></script>
@@ -284,7 +393,7 @@ class __TwigTemplate_159eb1db8d163257ac7f8d15e32dbb495f6d83eca144413f62d0c49e480
 
     public function getDebugInfo()
     {
-        return array (  271 => 53,  268 => 52,  119 => 55,  117 => 52,  99 => 39,  93 => 38,  80 => 30,  74 => 29,  68 => 28,  62 => 27,  41 => 13,  30 => 9,  20 => 1,);
+        return array (  380 => 53,  377 => 52,  119 => 55,  117 => 52,  99 => 39,  93 => 38,  80 => 30,  74 => 29,  68 => 28,  62 => 27,  41 => 13,  30 => 9,  20 => 1,);
     }
 
     public function getSource()

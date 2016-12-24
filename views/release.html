@@ -26,9 +26,9 @@
 	</div>
 	<div class="right pull-right">
 		<div class="release-nav text-center">
-			<a {% if prev is not empty %}href="/releases/{{ prev.releases_id }}"{% endif %} class="glyphicon glyphicon-menu-left{% if prev.releases_id is empty %} disabled{% endif %}"></a>
+			<a {% if prev is not empty %}data-target="releases" data-id="{{ prev.releases_id }}" href="/releases/{{ prev.releases_id }}"{% endif %} class="glyphicon glyphicon-menu-left{% if prev.releases_id is empty %} disabled{% endif %}{% if prev is not empty %} ajaxable{% endif %}"></a>
 			<span>Шукати реліз</span>
-			<a {% if next is not empty %}href="/releases/{{ next.releases_id }}"{% endif %}  class="glyphicon glyphicon-menu-right{% if next.releases_id is empty %} disabled{% endif %}"></a>
+			<a {% if next is not empty %}data-target="releases" data-id="{{ next.releases_id }}" href="/releases/{{ next.releases_id }}"{% endif %}  class="glyphicon glyphicon-menu-right{% if next.releases_id is empty %} disabled{% endif %}{% if next is not empty %} ajaxable{% endif %}"></a>
 		</div>
 		<div class="release-description">
 			{{ item.release_description|raw }}

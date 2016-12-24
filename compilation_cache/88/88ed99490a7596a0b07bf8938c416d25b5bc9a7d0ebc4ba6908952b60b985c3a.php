@@ -38,7 +38,9 @@ class __TwigTemplate_7b341e824c6dee2e2898f94b1a3c72c494dd0706565ee54a3dec278cbf7
 \t<a href=\"/news/";
             // line 5
             echo twig_escape_filter($this->env, $this->getAttribute($context["item"], "news_id", array()), "html", null, true);
-            echo "\">
+            echo "\" data-id=\"";
+            echo twig_escape_filter($this->env, $this->getAttribute($context["item"], "news_id", array()), "html", null, true);
+            echo "\" data-target=\"news\" class=\"ajaxable\">
 \t\t<div class=\"overlay\">
 \t\t\t<div class=\"date\">
 \t\t\t\t<span>";
@@ -88,7 +90,7 @@ class __TwigTemplate_7b341e824c6dee2e2898f94b1a3c72c494dd0706565ee54a3dec278cbf7
 
     public function getDebugInfo()
     {
-        return array (  74 => 21,  72 => 20,  69 => 19,  67 => 18,  64 => 17,  52 => 11,  46 => 8,  40 => 5,  35 => 4,  31 => 3,  28 => 2,  11 => 1,);
+        return array (  76 => 21,  74 => 20,  71 => 19,  69 => 18,  66 => 17,  54 => 11,  48 => 8,  40 => 5,  35 => 4,  31 => 3,  28 => 2,  11 => 1,);
     }
 
     public function getSource()

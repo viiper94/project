@@ -2,7 +2,7 @@
 {% block content %}
 {% for item in releases %}
 <div class="item" style="background-image: url(/images/releases/{{ item.release_cover }});">
-	<a href="/releases/{{ item.releases_id }}">
+	<a href="/releases/{{ item.releases_id }}" data-id="{{ item.releases_id }}" data-target="releases" class="ajaxable">
 		<div class="overlay">
 			<div class="title">
 				<h4>{{ item.release_artist }}</h4>
