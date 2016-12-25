@@ -19,7 +19,7 @@
 		<div class="clearfix"></div>
         {% for item in related %}
 		<div class="item related-item" style="background-image: url(/images/artists/{{ item.artist_picture }});">
-			<a href="/artists/{{ item.artist_id }}">
+			<a href="/artists/{{ item.artist_id }}" data-id="{{ item.artist_id }}" data-target="artists" class="ajaxable">
 				<div class="overlay">
 					<div class="title">
 						<span>{{ item.artist_name }}</span>

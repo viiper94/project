@@ -153,7 +153,7 @@
     <script type="text/html" id="artists-list-template">
         <% artists.forEach(function(artist) { %>
         <div class="item" style="background-image: url(/images/artists/<%=artist.artist_picture%>);">
-            <a href="/artists/<%=artist.artist_id%>">
+            <a href="/artists/<%=artist.artist_id%>" data-id="<%=artist.artist_id%>" data-target="artists" class="ajaxable">
                 <div class="overlay">
                     <div class="title">
                         <h3><%=artist.artist_name%></h3>
@@ -227,7 +227,7 @@
                 <div class="clearfix"></div>
                 <% _.each(related, function(item){ %>
                 <div class="item related-item" style="background-image: url(/images/news/<%=item.news_title_picture%>);">
-                    <a href="/news/<%=item.news_id%>">
+                    <a href="/news/<%=item.news_id%>" data-id="<%=item.news_id%>" data-target="news" class="ajaxable">
                         <div class="overlay">
                             <div class="title">
                                 <span><%=item.news_title%></span>
@@ -286,10 +286,44 @@
                 <p>Схожі релізи:</p>
                 <% _.each(related, function(rel){ %>
                 <div class="item related-item" style="background-image: url(/images/releases/<%=rel.release_cover%>);">
-                    <a href="/releases/<%=rel.releases_id%>">
+                    <a href="/releases/<%=rel.releases_id%>" data-id="<%=rel.releases_id%>" data-target="releases" class="ajaxable">
                         <div class="overlay">
                             <div class="title">
                                 <span><%=rel.release_title%></span>
+                            </div>
+                        </div>
+                    </a>
+                </div>
+                <% }) %>
+                <div class="clearfix"></div>
+            </div>
+            <% } %>
+        </div>
+    </script>
+    <script type="text/html" id="artists-template">
+        <div class="news-container">
+            <figure>
+                <img src="/images/artists/<%=artist.artist_picture%>">
+            </figure>
+            <article>
+                <span><%=artist.artist_bio%></span>
+            </article>
+            <div class="sharers">
+                <a href="#" class="share-fb"></a>
+                <a href="#" class="share-twitter"></a>
+                <a href="#" class="share-vk"></a>
+                <a href="#" class="share-mail"></a>
+            </div>
+            <% if($(related).length > 0){ %>
+            <div class="related">
+                <span>Схожі артисти:</span>
+                <div class="clearfix"></div>
+                <% _.each(related, function(item){ %>
+                <div class="item related-item" style="background-image: url(/images/artists/<%=item.artist_picture%>);">
+                    <a href="/artists/<%=item.artist_id%>" data-id="<%=item.artist_id%>" data-target="artists" class="ajaxable">
+                        <div class="overlay">
+                            <div class="title">
+                                <span><%=item.artist_name%></span>
                             </div>
                         </div>
                     </a>

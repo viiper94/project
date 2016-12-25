@@ -157,7 +157,7 @@ $(document).ready(function(){
     }
 
     function renderTemplate(tmpl, data){
-        console.log(data);
+        // console.log(data);
         var template = _.template($('#'+tmpl+'-template').html())(data);
         $('main').append(template);
     }

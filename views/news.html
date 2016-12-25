@@ -17,7 +17,7 @@
             <div class="clearfix"></div>
             {% for item in related %}
             <div class="item related-item" style="background-image: url(/images/news/{{ item.news_title_picture }});">
-                <a href="/news/{{ item.news_id }}">
+                <a href="/news/{{ item.news_id }}" data-id="{{ item.news_id }}" data-target="news" class="ajaxable">
                     <div class="overlay">
                         <div class="title">
                             <span>{{ item.news_title }}</span>

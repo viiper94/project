@@ -78,7 +78,9 @@ class __TwigTemplate_5589fba44058cbcc0fd8aed75c78cc2a501bbc92c88d4681d32c2eac08d
 \t\t\t<a ";
         // line 29
         if ( !twig_test_empty((isset($context["prev"]) ? $context["prev"] : null))) {
-            echo "href=\"/releases/";
+            echo "data-target=\"releases\" data-id=\"";
+            echo twig_escape_filter($this->env, $this->getAttribute((isset($context["prev"]) ? $context["prev"] : null), "releases_id", array()), "html", null, true);
+            echo "\" href=\"/releases/";
             echo twig_escape_filter($this->env, $this->getAttribute((isset($context["prev"]) ? $context["prev"] : null), "releases_id", array()), "html", null, true);
             echo "\"";
         }
@@ -86,18 +88,26 @@ class __TwigTemplate_5589fba44058cbcc0fd8aed75c78cc2a501bbc92c88d4681d32c2eac08d
         if (twig_test_empty($this->getAttribute((isset($context["prev"]) ? $context["prev"] : null), "releases_id", array()))) {
             echo " disabled";
         }
+        if ( !twig_test_empty((isset($context["prev"]) ? $context["prev"] : null))) {
+            echo " ajaxable";
+        }
         echo "\"></a>
 \t\t\t<span>Шукати реліз</span>
 \t\t\t<a ";
         // line 31
         if ( !twig_test_empty((isset($context["next"]) ? $context["next"] : null))) {
-            echo "href=\"/releases/";
+            echo "data-target=\"releases\" data-id=\"";
+            echo twig_escape_filter($this->env, $this->getAttribute((isset($context["next"]) ? $context["next"] : null), "releases_id", array()), "html", null, true);
+            echo "\" href=\"/releases/";
             echo twig_escape_filter($this->env, $this->getAttribute((isset($context["next"]) ? $context["next"] : null), "releases_id", array()), "html", null, true);
             echo "\"";
         }
         echo "  class=\"glyphicon glyphicon-menu-right";
         if (twig_test_empty($this->getAttribute((isset($context["next"]) ? $context["next"] : null), "releases_id", array()))) {
             echo " disabled";
+        }
+        if ( !twig_test_empty((isset($context["next"]) ? $context["next"] : null))) {
+            echo " ajaxable";
         }
         echo "\"></a>
 \t\t</div>
@@ -172,7 +182,7 @@ class __TwigTemplate_5589fba44058cbcc0fd8aed75c78cc2a501bbc92c88d4681d32c2eac08d
 
     public function getDebugInfo()
     {
-        return array (  159 => 59,  154 => 56,  142 => 50,  136 => 47,  131 => 46,  127 => 45,  123 => 43,  121 => 42,  114 => 38,  107 => 34,  93 => 31,  80 => 29,  65 => 17,  61 => 16,  57 => 15,  53 => 14,  46 => 10,  40 => 7,  36 => 6,  31 => 3,  28 => 2,  11 => 1,);
+        return array (  169 => 59,  164 => 56,  152 => 50,  146 => 47,  141 => 46,  137 => 45,  133 => 43,  131 => 42,  124 => 38,  117 => 34,  98 => 31,  80 => 29,  65 => 17,  61 => 16,  57 => 15,  53 => 14,  46 => 10,  40 => 7,  36 => 6,  31 => 3,  28 => 2,  11 => 1,);
     }
 
     public function getSource()

@@ -2,7 +2,7 @@
 {% block content %}
 {% for artist in artists %}
 <div class="item" style="background-image: url(/images/artists/{{ artist.artist_picture }});">
-	<a href="/artists/{{ artist.artist_id }}">
+	<a href="/artists/{{ artist.artist_id }}" data-id="{{ artist.artist_id }}" data-target="artists" class="ajaxable">
 		<div class="overlay">
 			<div class="title">
 				<h3>{{ artist.artist_name }}</h3>
