@@ -48,7 +48,7 @@ class MainModel extends Model{
     
     public function getNextData($id){
         $result = $this->db->query('SELECT '.$this->columns['id'].' FROM '.$this->table.
-            ' WHERE sort > (SELECT sort FROM '.$this->table.' WHERE '.$this->columns['id'].' = '.$id.') ORDER BY sort DESC');
+            ' WHERE sort > (SELECT sort FROM '.$this->table.' WHERE '.$this->columns['id'].' = '.$id.') ORDER BY sort ASC');
         return $result[0];
     }
     
