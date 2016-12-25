@@ -71,6 +71,12 @@ $(document).ready(function(){
             }
         });
     });
+
+    // if back/forward buttons pressed
+    window.addEventListener("popstate", function(e) {
+        ajaxRequest(e.state, false);
+        navBarActive(e.state);
+    }, false);
     
     $(document).on('click', '.ajaxable', function(){
         event.preventDefault();
@@ -79,6 +85,7 @@ $(document).ready(function(){
             'page' : $(this).attr('data-page'),                                                             // get page
             'id' : $(this).attr('data-id')                                                                  // get id
         };
+        parameters.link = $(this).attr('href');
         parameters.section = parameters.id == undefined ? parameters.target+'-list' : parameters.target;    // generate html template name
         // if clicked href has hash
         if($(this).attr('href').indexOf('#') != -1){
@@ -86,9 +93,13 @@ $(document).ready(function(){
             parameters.hash = href.substring(href.indexOf('#'));                                            // get anchor in school page
             // console.log(hash);
         }
-        ajaxRequest(parameters);
-        // console.log($('.nav>li'));
+        ajaxRequest(parameters, true);
+        navBarActive(parameters);
 
+    });
+
+    function navBarActive(parameters){
+        // console.log($('.nav>li'));
         $('.nav>li').removeClass('active');
         for(var i = 0; i < $('.nav>li').length; i++){
             var li = $('.nav>li')[i];
@@ -97,7 +108,7 @@ $(document).ready(function(){
                 break;
             }
         }
-    });
+    }
 
     $('#search-form').submit(function(){
         event.preventDefault();
@@ -106,13 +117,14 @@ $(document).ready(function(){
             'section' : 'search',
             'query' : $('#search-form input').val()
         };
+        data.link = '/search/?q='+data.query;
         // console.log(query);
-        ajaxRequest(data);
+        ajaxRequest(data, true);
         $('.nav>li').removeClass('active');
         // $('#search-form input').val('');
     });
 
-    function ajaxRequest(data){
+    function ajaxRequest(data, setHistory){
         $.ajax({
             cache: false,
             dataType : 'json',
@@ -126,6 +138,9 @@ $(document).ready(function(){
             },
             success : function(response){
                 if(response.status == 'OK'){
+                    if(setHistory){                                             // if 'setHistory' flag is set
+                        history.pushState(data, null, data.link);               // push new state to history with data object
+                    }
                     clearMain();
                     setNewTitle(response.title);
                     if(response.item == undefined){
