@@ -4,14 +4,15 @@
 	<figure>
 		<img src="/images/artists/{{ artist.artist_picture }}">
 	</figure>
-	<article>
+	<article class="description">
 		<span>{{ artist.artist_bio|raw }}</span>
 	</article>
 	<div class="sharers">
-		<a href="#" class="share-fb"></a>
-		<a href="#" class="share-twitter"></a>
-		<a href="#" class="share-vk"></a>
-		<a href="#" class="share-mail"></a>
+        <p>Share:</p>
+		<a class="share-fb" id="fb"></a>
+		<a class="share-twitter" id="twitter"></a>
+		<a class="share-vk" id="vk"></a>
+		<a class="share-mail" id="mail"></a>
 	</div>
     {% if related is not empty %}
 	<div class="related">

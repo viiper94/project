@@ -18,10 +18,10 @@
 		</div>
 		<div class="sharers">
 			<p>Share:</p>
-			<a href="#" class="share-fb"></a>
-			<a href="#" class="share-twitter"></a>
-			<a href="#" class="share-vk"></a>
-			<a href="#" class="share-mail"></a>
+            <a class="share-fb" id="fb"></a>
+            <a class="share-twitter" id="twitter"></a>
+            <a class="share-vk" id="vk"></a>
+            <a class="share-mail" id="mail"></a>
 		</div>
 	</div>
 	<div class="right pull-right">
@@ -30,9 +30,9 @@
 			<span>Шукати реліз</span>
 			<a {% if next is not empty %}data-target="releases" data-id="{{ next.releases_id }}" href="/releases/{{ next.releases_id }}"{% endif %}  class="glyphicon glyphicon-menu-right{% if next.releases_id is empty %} disabled{% endif %}{% if next is not empty %} ajaxable{% endif %}"></a>
 		</div>
-		<div class="release-description">
-			{{ item.release_description|raw }}
-		</div>
+		<article class="release-description description">
+			<span>{{ item.release_description|raw }}</span>
+		</article>
 		<div class="release-tracklist">
 			<h3>Трекліст:</h3>
 			{{ item.release_tracklist|raw }}

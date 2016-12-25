@@ -209,5 +209,26 @@ $(document).ready(function(){
         var html = _.template($('#pagination-template').html())(data);
         $('main').append(html);
     }
+
+    $(document).on('click', '.sharers a', function(){
+        var social = $(this).attr('id');
+        var title = $('title').html();
+        var description = $('.description span').html();
+        switch (social) {
+            case 'fb' :
+                var url = 'https://www.facebook.com/sharer.php?u='+window.location.href+'&description='+description;
+                break;
+            case 'twitter' :
+                url = 'http://twitter.com/intent/tweet?text=@DAMAGE_RECORDS+'+title+'&url='+window.location.href+'&hashtags=DAMAGE';
+                break;
+            case 'vk' :
+                url = 'http://vk.com/share.php?description='+description+'&url='+window.location.href;
+                break;
+            case 'mail' :
+                url = 'mailto:?Subject='+title+'&body='+window.location.href;
+                break;
+        }
+        window.open(url,'share-dialog',"resizable=0,width=626,height=436,scrollbars=yes");
+    });
     
 });

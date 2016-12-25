@@ -212,14 +212,15 @@
     <script type="text/html" id="news-template">
         <div class="news-container">
             <h2><%=item.news_title%></h2>
-            <article>
+            <article class="description">
                 <span><%=item.news_article%></span>
             </article>
             <div class="sharers">
-                <a href="#" class="share-fb"></a>
-                <a href="#" class="share-twitter"></a>
-                <a href="#" class="share-vk"></a>
-                <a href="#" class="share-mail"></a>
+                <p>Share:</p>
+                <a class="share-fb" id="fb"></a>
+                <a class="share-twitter" id="twitter"></a>
+                <a class="share-vk" id="vk"></a>
+                <a class="share-mail" id="mail"></a>
             </div>
             <% if($(related).length > 0){ %>
             <div class="related">
@@ -260,10 +261,10 @@
                 </div>
                 <div class="sharers">
                     <p>Share:</p>
-                    <a href="#" class="share-fb"></a>
-                    <a href="#" class="share-twitter"></a>
-                    <a href="#" class="share-vk"></a>
-                    <a href="#" class="share-mail"></a>
+                    <a class="share-fb" id="fb"></a>
+                    <a class="share-twitter" id="twitter"></a>
+                    <a class="share-vk" id="vk"></a>
+                    <a class="share-mail" id="mail"></a>
                 </div>
             </div>
             <div class="right pull-right">
@@ -272,9 +273,9 @@
                     <span>Шукати реліз</span>
                     <a <% if(next != undefined){ %>data-target="releases" data-id="<%=next.releases_id%>" href="/releases/<%=next.releases_id%>"<% } %> class="glyphicon glyphicon-menu-right<% if(next == undefined){ %> disabled<% } %><% if(next != undefined){ %> ajaxable<% } %>"></a>
                 </div>
-                <div class="release-description">
+                <article class="release-description description">
                     <%=item.release_description%>
-                </div>
+                </article>
                 <div class="release-tracklist">
                     <h3>Трекліст:</h3>
                     <%=item.release_tracklist%>
@@ -305,14 +306,15 @@
             <figure>
                 <img src="/images/artists/<%=artist.artist_picture%>">
             </figure>
-            <article>
+            <article class="description">
                 <span><%=artist.artist_bio%></span>
             </article>
             <div class="sharers">
-                <a href="#" class="share-fb"></a>
-                <a href="#" class="share-twitter"></a>
-                <a href="#" class="share-vk"></a>
-                <a href="#" class="share-mail"></a>
+                <p>Share:</p>
+                <a class="share-fb" id="fb"></a>
+                <a class="share-twitter" id="twitter"></a>
+                <a class="share-vk" id="vk"></a>
+                <a class="share-mail" id="mail"></a>
             </div>
             <% if($(related).length > 0){ %>
             <div class="related">

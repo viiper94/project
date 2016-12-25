@@ -1,14 +1,14 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="9b08e53f-9d2e-4e18-a33a-e3b71617b918" name="Default" comment="">
+    <list default="true" id="9b08e53f-9d2e-4e18-a33a-e3b71617b918" name="Default" comment="added sha">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/assets/js/script.js" afterPath="$PROJECT_DIR$/assets/js/script.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/compilation_cache/7f/7fb7a1adcce2f9dd64e7d598a86ad6d036b83e36fda53c01ab37e119c34b5fdf.php" afterPath="$PROJECT_DIR$/compilation_cache/7f/7fb7a1adcce2f9dd64e7d598a86ad6d036b83e36fda53c01ab37e119c34b5fdf.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/compilation_cache/a5/a58990fa3c04a1edec5db88fee5db369e7ca61e9e4d952031e7f9461af1956d0.php" afterPath="$PROJECT_DIR$/compilation_cache/a5/a58990fa3c04a1edec5db88fee5db369e7ca61e9e4d952031e7f9461af1956d0.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/compilation_cache/b0/b0c2aa5ea2f1dda057a98dc66189ff8c662002e6ee1a06621d77eff5beed72e1.php" afterPath="$PROJECT_DIR$/compilation_cache/b0/b0c2aa5ea2f1dda057a98dc66189ff8c662002e6ee1a06621d77eff5beed72e1.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/compilation_cache/22/226c13327bbe3c6534c0006eb6f809dcf8f4b8aa7b987e8aa470eb2d40805615.php" afterPath="$PROJECT_DIR$/compilation_cache/22/226c13327bbe3c6534c0006eb6f809dcf8f4b8aa7b987e8aa470eb2d40805615.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/views/artist.html" afterPath="$PROJECT_DIR$/views/artist.html" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/views/index.html" afterPath="$PROJECT_DIR$/views/index.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/views/pagination.html" afterPath="$PROJECT_DIR$/views/pagination.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/views/news.html" afterPath="$PROJECT_DIR$/views/news.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/views/release.html" afterPath="$PROJECT_DIR$/views/release.html" />
     </list>
     <ignored path="decrypt.php" />
     <ignored path=".idea/" />
@@ -46,11 +46,11 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="index.html" pinned="false" current-in-tab="false">
+      <file leaf-file-name="index.html" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/views/index.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="667">
-              <caret line="118" column="11" selection-start-line="118" selection-start-column="11" selection-end-line="118" selection-end-column="11" />
+            <state relative-caret-position="564">
+              <caret line="223" column="18" selection-start-line="223" selection-start-column="18" selection-end-line="223" selection-end-column="18" />
               <folding>
                 <element signature="n#script#1;n#body#0;n#html#0;n#!!top" expanded="false" />
                 <element signature="n#script#2;n#body#0;n#html#0;n#!!top" expanded="false" />
@@ -59,7 +59,6 @@
                 <element signature="n#script#5;n#body#0;n#html#0;n#!!top" expanded="false" />
                 <element signature="n#script#6;n#body#0;n#html#0;n#!!top" expanded="false" />
                 <element signature="n#script#7;n#body#0;n#html#0;n#!!top" expanded="false" />
-                <element signature="n#script#8;n#body#0;n#html#0;n#!!top" expanded="false" />
                 <element signature="n#script#9;n#body#0;n#html#0;n#!!top" expanded="false" />
                 <element signature="n#script#10;n#body#0;n#html#0;n#!!top" expanded="false" />
               </folding>
@@ -67,31 +66,21 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="ReleasesController.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/classes/controllers/ReleasesController.php">
+      <file leaf-file-name="script.js" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/assets/js/script.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="340">
-              <caret line="20" column="53" selection-start-line="20" selection-start-column="42" selection-end-line="20" selection-end-column="53" />
+            <state relative-caret-position="759">
+              <caret line="219" column="22" selection-start-line="219" selection-start-column="22" selection-end-line="219" selection-end-column="22" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="MainModel.php" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/classes/models/MainModel.php">
+      <file leaf-file-name="release.html" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/views/release.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="767">
-              <caret line="59" column="1" selection-start-line="59" selection-start-column="1" selection-end-line="59" selection-end-column="1" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="artists.html" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/views/artists.html">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="68">
-              <caret line="4" column="100" selection-start-line="4" selection-start-column="79" selection-end-line="4" selection-end-column="100" />
+            <state relative-caret-position="323">
+              <caret line="19" column="12" selection-start-line="19" selection-start-column="12" selection-end-line="19" selection-end-column="25" />
               <folding />
             </state>
           </provider>
@@ -100,58 +89,18 @@
       <file leaf-file-name="artist.html" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/views/artist.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="34">
-              <caret line="2" column="0" selection-start-line="2" selection-start-column="0" selection-end-line="33" selection-end-column="6" />
+            <state relative-caret-position="170">
+              <caret line="10" column="21" selection-start-line="10" selection-start-column="21" selection-end-line="10" selection-end-column="21" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="releases.html" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/views/releases.html">
+      <file leaf-file-name="news.html" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/views/news.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="68">
-              <caret line="4" column="119" selection-start-line="4" selection-start-column="46" selection-end-line="4" selection-end-column="119" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="style.css" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/assets/css/style.css">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="799">
-              <caret line="47" column="89" selection-start-line="47" selection-start-column="89" selection-end-line="47" selection-end-column="89" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="main.html" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/views/main.html">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="68">
-              <caret line="4" column="103" selection-start-line="4" selection-start-column="38" selection-end-line="4" selection-end-column="103" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="script.js" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/assets/js/script.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="62">
-              <caret line="43" column="11" selection-start-line="43" selection-start-column="11" selection-end-line="43" selection-end-column="11" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="pagination.html" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/views/pagination.html">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="34">
-              <caret line="2" column="173" selection-start-line="2" selection-start-column="119" selection-end-line="2" selection-end-column="173" />
+            <state relative-caret-position="136">
+              <caret line="8" column="8" selection-start-line="8" selection-start-column="8" selection-end-line="12" selection-end-column="44" />
               <folding />
             </state>
           </provider>
@@ -208,14 +157,14 @@
         <option value="$PROJECT_DIR$/views/main.html" />
         <option value="$PROJECT_DIR$/assets/css/style.css" />
         <option value="$PROJECT_DIR$/views/releases.html" />
-        <option value="$PROJECT_DIR$/views/release.html" />
-        <option value="$PROJECT_DIR$/views/news.html" />
         <option value="$PROJECT_DIR$/views/artists.html" />
-        <option value="$PROJECT_DIR$/views/artist.html" />
-        <option value="$PROJECT_DIR$/assets/js/script.js" />
         <option value="$PROJECT_DIR$/views/pagination.html" />
-        <option value="$PROJECT_DIR$/views/index.html" />
         <option value="$PROJECT_DIR$/classes/models/MainModel.php" />
+        <option value="$PROJECT_DIR$/assets/js/script.js" />
+        <option value="$PROJECT_DIR$/views/release.html" />
+        <option value="$PROJECT_DIR$/views/artist.html" />
+        <option value="$PROJECT_DIR$/views/news.html" />
+        <option value="$PROJECT_DIR$/views/index.html" />
       </list>
     </option>
   </component>
@@ -455,7 +404,7 @@
       <workItem from="1482479234985" duration="15106000" />
       <workItem from="1482510825629" duration="1852000" />
       <workItem from="1482616768601" duration="5905000" />
-      <workItem from="1482690054453" duration="2530000" />
+      <workItem from="1482690054453" duration="6530000" />
     </task>
     <task id="LOCAL-00001" summary="added space">
       <created>1480855440067</created>
@@ -744,11 +693,25 @@
       <option name="project" value="LOCAL" />
       <updated>1482692583543</updated>
     </task>
-    <option name="localTasksCounter" value="42" />
+    <task id="LOCAL-00042" summary="added some ajax for pagination">
+      <created>1482692606926</created>
+      <option name="number" value="00042" />
+      <option name="presentableId" value="LOCAL-00042" />
+      <option name="project" value="LOCAL" />
+      <updated>1482692606926</updated>
+    </task>
+    <task id="LOCAL-00043" summary="fixed back/forward button with ajax">
+      <created>1482696173928</created>
+      <option name="number" value="00043" />
+      <option name="presentableId" value="LOCAL-00043" />
+      <option name="project" value="LOCAL" />
+      <updated>1482696173928</updated>
+    </task>
+    <option name="localTasksCounter" value="44" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="277531000" />
+    <option name="totallyTimeSpent" value="281531000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -820,8 +783,6 @@
     <ignored-roots>
       <path value="$PROJECT_DIR$" />
     </ignored-roots>
-    <MESSAGE value="some admin search fixes" />
-    <MESSAGE value="fixed navbar dropdown line height" />
     <MESSAGE value="fixed alerts massage in admin" />
     <MESSAGE value="edited 404 image" />
     <MESSAGE value="change saved image mime type to jpeg only" />
@@ -845,7 +806,9 @@
     <MESSAGE value="added more ajax to navbar news and release pages" />
     <MESSAGE value="added more ajax to navbar news, artists and release pages" />
     <MESSAGE value="fixed next release var" />
-    <option name="LAST_COMMIT_MESSAGE" value="fixed next release var" />
+    <MESSAGE value="added some ajax for pagination" />
+    <MESSAGE value="fixed back/forward button with ajax" />
+    <option name="LAST_COMMIT_MESSAGE" value="fixed back/forward button with ajax" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -1127,50 +1090,18 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/assets/css/style.css">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="799">
-          <caret line="47" column="89" selection-start-line="47" selection-start-column="89" selection-end-line="47" selection-end-column="89" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/views/main.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="68">
-          <caret line="4" column="103" selection-start-line="4" selection-start-column="38" selection-end-line="4" selection-end-column="103" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/views/release.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="408">
-          <caret line="24" column="14" selection-start-line="24" selection-start-column="14" selection-end-line="24" selection-end-column="14" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/views/news.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="425">
-          <caret line="25" column="20" selection-start-line="25" selection-start-column="20" selection-end-line="25" selection-end-column="20" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/views/artist.html">
+    <entry file="file://$PROJECT_DIR$/views/pagination.html">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="34">
-          <caret line="2" column="0" selection-start-line="2" selection-start-column="0" selection-end-line="33" selection-end-column="6" />
+          <caret line="2" column="173" selection-start-line="2" selection-start-column="119" selection-end-line="2" selection-end-column="173" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/assets/js/script.js">
+    <entry file="file://$PROJECT_DIR$/classes/controllers/ReleasesController.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="62">
-          <caret line="43" column="11" selection-start-line="43" selection-start-column="11" selection-end-line="43" selection-end-column="11" />
+        <state relative-caret-position="340">
+          <caret line="20" column="53" selection-start-line="20" selection-start-column="42" selection-end-line="20" selection-end-column="53" />
           <folding />
         </state>
       </provider>
@@ -1191,18 +1122,66 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/views/pagination.html">
+    <entry file="file://$PROJECT_DIR$/assets/css/style.css">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="34">
-          <caret line="2" column="173" selection-start-line="2" selection-start-column="119" selection-end-line="2" selection-end-column="173" />
+        <state relative-caret-position="289">
+          <caret line="47" column="89" selection-start-line="47" selection-start-column="89" selection-end-line="47" selection-end-column="89" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/views/main.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="68">
+          <caret line="4" column="103" selection-start-line="4" selection-start-column="38" selection-end-line="4" selection-end-column="103" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/classes/models/MainModel.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="750">
+          <caret line="58" column="5" selection-start-line="58" selection-start-column="5" selection-end-line="58" selection-end-column="5" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/assets/js/script.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="759">
+          <caret line="219" column="22" selection-start-line="219" selection-start-column="22" selection-end-line="219" selection-end-column="22" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/views/release.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="323">
+          <caret line="19" column="12" selection-start-line="19" selection-start-column="12" selection-end-line="19" selection-end-column="25" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/views/artist.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="170">
+          <caret line="10" column="21" selection-start-line="10" selection-start-column="21" selection-end-line="10" selection-end-column="21" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/views/news.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="136">
+          <caret line="8" column="8" selection-start-line="8" selection-start-column="8" selection-end-line="12" selection-end-column="44" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/views/index.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="667">
-          <caret line="118" column="11" selection-start-line="118" selection-start-column="11" selection-end-line="118" selection-end-column="11" />
+        <state relative-caret-position="564">
+          <caret line="223" column="18" selection-start-line="223" selection-start-column="18" selection-end-line="223" selection-end-column="18" />
           <folding>
             <element signature="n#script#1;n#body#0;n#html#0;n#!!top" expanded="false" />
             <element signature="n#script#2;n#body#0;n#html#0;n#!!top" expanded="false" />
@@ -1211,26 +1190,9 @@
             <element signature="n#script#5;n#body#0;n#html#0;n#!!top" expanded="false" />
             <element signature="n#script#6;n#body#0;n#html#0;n#!!top" expanded="false" />
             <element signature="n#script#7;n#body#0;n#html#0;n#!!top" expanded="false" />
-            <element signature="n#script#8;n#body#0;n#html#0;n#!!top" expanded="false" />
             <element signature="n#script#9;n#body#0;n#html#0;n#!!top" expanded="false" />
             <element signature="n#script#10;n#body#0;n#html#0;n#!!top" expanded="false" />
           </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/classes/controllers/ReleasesController.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="340">
-          <caret line="20" column="53" selection-start-line="20" selection-start-column="42" selection-end-line="20" selection-end-column="53" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/classes/models/MainModel.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="767">
-          <caret line="59" column="1" selection-start-line="59" selection-start-column="1" selection-end-line="59" selection-end-column="1" />
-          <folding />
         </state>
       </provider>
     </entry>
