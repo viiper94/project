@@ -146,38 +146,38 @@ class __TwigTemplate_159eb1db8d163257ac7f8d15e32dbb495f6d83eca144413f62d0c49e480
     <% if(pgn.total_pages > 1){ %>
         <div class=\"paginations text-center row\">
             <% var prev = pgn.current_page - 1; %>
-            <a class=\"prev-pgn<% if(prev >= 1){ %>\" href=\"/<%=controller%>/?page=<%=prev%>\"<% }else{ %> disabled\"<% } %>>
-            <span class=\"glyphicon glyphicon-backward\"></span>
+            <a class=\"prev-pgn ajaxable<% if(prev >= 1){ %>\" href=\"/<%=controller%>/?page=<%=prev%>\"<% }else{ %> disabled\"<% } %> data-target=\"<%=controller%>\" data-page=\"<%=prev%>\">
+                <span class=\"glyphicon glyphicon-backward\"></span>
             </a>
-            <a href=\"/<%=controller%>/?page=1\" class=\"pgn<% if(pgn.current_page == 1){ %> pgn-current<% } %>\">1</a>
+            <a href=\"/<%=controller%>/?page=1\" class=\"pgn ajaxable<% if(pgn.current_page == 1){ %> pgn-current<% } %>\" data-target=\"<%=controller%>\" data-page=\"1\">1</a>
             <% if(pgn.total_pages >= 10){ %>
                 <% if(pgn.current_page < 6){ %>
                     <% for(var i = 2; i <= pgn.current_page + 2; i++){ %>
-                        <a href=\"/<%=controller%>/?page=<%=i%>\" class=\"pgn<% if(i == pgn.current_page){ %> pgn-current<% } %>\"><%=i%></a>
+                        <a href=\"/<%=controller%>/?page=<%=i%>\" class=\"pgn ajaxable<% if(i == pgn.current_page){ %> pgn-current<% } %>\" data-target=\"<%=controller%>\" data-page=\"<%=i%>\"><%=i%></a>
                     <% } %>
                     <span style=\"color: #fff\">...</span>
-                    <a href=\"/<%=controller%>/?page=<%=pgn.total_pages%>\" class=\"pgn\"><%=pgn.total_pages%></a>
+                    <a href=\"/<%=controller%>/?page=<%=pgn.total_pages%>\" class=\"pgn ajaxable\" data-target=\"<%=controller%>\" data-page=\"<%=pgn.total_pages%>\"><%=pgn.total_pages%></a>
                     <% }else if(pgn.current_page >= pgn.total_pages - 4){ %>
                     <span style=\"color: #fff\">...</span>
                     <% for(var i = pgn.current_page - 2; i <= pgn.total_pages; i++){ %>
-                        <a href=\"/<%=controller%>/?page=<%=i%>\" class=\"pgn<% if(i == pgn.current_page){ %> pgn-current<% } %>\"><%=i%></a>
+                        <a href=\"/<%=controller%>/?page=<%=i%>\" class=\"pgn ajaxable<% if(i == pgn.current_page){ %> pgn-current<% } %>\" data-target=\"<%=controller%>\" data-page=\"<%=i%>\"><%=i%></a>
                     <% } %>
                 <% }else{ %>
                     <span style=\"color: #fff\">...</span>
                     <% for(var i = pgn.current_page - 2; i <= pgn.current_page + 2; i++){ %>
-                        <a href=\"/<%=controller%>/?page=<%=i%>\" class=\"pgn<% if(i == pgn.current_page){ %> pgn-current<% } %>\"><%=i%></a>
+                        <a href=\"/<%=controller%>/?page=<%=i%>\" class=\"pgn ajaxable<% if(i == pgn.current_page){ %> pgn-current<% } %>\" data-target=\"<%=controller%>\" data-page=\"<%=i%>\"><%=i%></a>
                     <% } %>
                     <span style=\"color: #fff\">...</span>
-                    <a href=\"/<%=controller%>/?page=<%=pgn.total_pages%>\" class=\"pgn\"><%=pgn.total_pages%></a>
+                    <a href=\"/<%=controller%>/?page=<%=pgn.total_pages%>\" class=\"pgn ajaxable\" data-target=\"<%=controller%>\" data-page=\"<%=pgn.total_pages%>\"><%=pgn.total_pages%></a>
                 <% } %>
             <% }else{ %>
                 <% for(var i = 2; i <= pgn.total_pages; i++){ %>
-                    <a href=\"/<%=controller%>/?page=<%=i%>\" class=\"pgn<% if(i == pgn.current_page){ %> pgn-current<% } %>\"><%=i%></a>
+                    <a href=\"/<%=controller%>/?page=<%=i%>\" class=\"pgn ajaxable<% if(i == pgn.current_page){ %> pgn-current<% } %>\" data-target=\"<%=controller%>\" data-page=\"<%=i%>\"><%=i%></a>
                 <% } %>
             <% } %>
             <% var next = pgn.current_page + 1; %>
-            <a class=\"next-pgn<% if(next <= pgn.total_pages){ %>\" href=\"/<%=controller%>/?page=<%=next%>\"<% }else{ %> disabled\"<% } %>>
-            <span class=\"glyphicon glyphicon-forward\"></span>
+            <a class=\"next-pgn ajaxable<% if(next <= pgn.total_pages){ %>\" href=\"/<%=controller%>/?page=<%=next%>\"<% }else{ %> disabled\"<% } %> data-target=\"<%=controller%>\" data-page=\"<%=next%>\">
+                <span class=\"glyphicon glyphicon-forward\"></span>
             </a>
         </div>
     <% } %>
@@ -217,7 +217,7 @@ class __TwigTemplate_159eb1db8d163257ac7f8d15e32dbb495f6d83eca144413f62d0c49e480
     <script type=\"text/html\" id=\"artists-list-template\">
         <% artists.forEach(function(artist) { %>
         <div class=\"item\" style=\"background-image: url(/images/artists/<%=artist.artist_picture%>);\">
-            <a href=\"/artists/<%=artist.artist_id%>\">
+            <a href=\"/artists/<%=artist.artist_id%>\" data-id=\"<%=artist.artist_id%>\" data-target=\"artists\" class=\"ajaxable\">
                 <div class=\"overlay\">
                     <div class=\"title\">
                         <h3><%=artist.artist_name%></h3>
@@ -291,7 +291,7 @@ class __TwigTemplate_159eb1db8d163257ac7f8d15e32dbb495f6d83eca144413f62d0c49e480
                 <div class=\"clearfix\"></div>
                 <% _.each(related, function(item){ %>
                 <div class=\"item related-item\" style=\"background-image: url(/images/news/<%=item.news_title_picture%>);\">
-                    <a href=\"/news/<%=item.news_id%>\">
+                    <a href=\"/news/<%=item.news_id%>\" data-id=\"<%=item.news_id%>\" data-target=\"news\" class=\"ajaxable\">
                         <div class=\"overlay\">
                             <div class=\"title\">
                                 <span><%=item.news_title%></span>
@@ -350,10 +350,44 @@ class __TwigTemplate_159eb1db8d163257ac7f8d15e32dbb495f6d83eca144413f62d0c49e480
                 <p>Схожі релізи:</p>
                 <% _.each(related, function(rel){ %>
                 <div class=\"item related-item\" style=\"background-image: url(/images/releases/<%=rel.release_cover%>);\">
-                    <a href=\"/releases/<%=rel.releases_id%>\">
+                    <a href=\"/releases/<%=rel.releases_id%>\" data-id=\"<%=rel.releases_id%>\" data-target=\"releases\" class=\"ajaxable\">
                         <div class=\"overlay\">
                             <div class=\"title\">
                                 <span><%=rel.release_title%></span>
+                            </div>
+                        </div>
+                    </a>
+                </div>
+                <% }) %>
+                <div class=\"clearfix\"></div>
+            </div>
+            <% } %>
+        </div>
+    </script>
+    <script type=\"text/html\" id=\"artists-template\">
+        <div class=\"news-container\">
+            <figure>
+                <img src=\"/images/artists/<%=artist.artist_picture%>\">
+            </figure>
+            <article>
+                <span><%=artist.artist_bio%></span>
+            </article>
+            <div class=\"sharers\">
+                <a href=\"#\" class=\"share-fb\"></a>
+                <a href=\"#\" class=\"share-twitter\"></a>
+                <a href=\"#\" class=\"share-vk\"></a>
+                <a href=\"#\" class=\"share-mail\"></a>
+            </div>
+            <% if(\$(related).length > 0){ %>
+            <div class=\"related\">
+                <span>Схожі артисти:</span>
+                <div class=\"clearfix\"></div>
+                <% _.each(related, function(item){ %>
+                <div class=\"item related-item\" style=\"background-image: url(/images/artists/<%=item.artist_picture%>);\">
+                    <a href=\"/artists/<%=item.artist_id%>\" data-id=\"<%=item.artist_id%>\" data-target=\"artists\" class=\"ajaxable\">
+                        <div class=\"overlay\">
+                            <div class=\"title\">
+                                <span><%=item.artist_name%></span>
                             </div>
                         </div>
                     </a>
@@ -393,7 +427,7 @@ class __TwigTemplate_159eb1db8d163257ac7f8d15e32dbb495f6d83eca144413f62d0c49e480
 
     public function getDebugInfo()
     {
-        return array (  380 => 53,  377 => 52,  119 => 55,  117 => 52,  99 => 39,  93 => 38,  80 => 30,  74 => 29,  68 => 28,  62 => 27,  41 => 13,  30 => 9,  20 => 1,);
+        return array (  414 => 53,  411 => 52,  119 => 55,  117 => 52,  99 => 39,  93 => 38,  80 => 30,  74 => 29,  68 => 28,  62 => 27,  41 => 13,  30 => 9,  20 => 1,);
     }
 
     public function getSource()

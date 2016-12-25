@@ -172,11 +172,15 @@ $(document).ready(function(){
         });
         console.log(item);
         var templates = {};
-        templates.newsTemplate = data.news != false ? _.template($('#news-list-template').html())(data) : undefined;
+        templates.newsTemplate = data.news != false 
+            ? _.template($('#news-list-template').html())(data) 
+            : undefined;
         templates.releasesTemplate = $(item.artists).length > 0 || $(item.title).length > 0
             ? _.template($('#releases-list-template').html())(item)
             : undefined;
-        templates.artistsTemplate = data.artists != false ? _.template($('#artists-list-template').html())(data) : undefined;
+        templates.artistsTemplate = data.artists != false 
+            ? _.template($('#artists-list-template').html())(data) 
+            : undefined;
         var searchTemplate = _.template($('#search-template').html())(templates);
         $('main').append(searchTemplate);
     }

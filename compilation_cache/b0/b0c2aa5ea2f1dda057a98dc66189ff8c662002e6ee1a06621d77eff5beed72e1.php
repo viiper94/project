@@ -18,7 +18,7 @@ class __TwigTemplate_8355a8d4142f5b8fd81b3e51b016e5e78efd63fca3a8fc67bfa945c324f
         // line 2
         $context["prev"] = ($this->getAttribute((isset($context["pgn"]) ? $context["pgn"] : null), "current_page", array()) - 1);
         // line 3
-        echo "<a class=\"prev-pgn";
+        echo "<a class=\"prev-pgn ajaxable";
         if (((isset($context["prev"]) ? $context["prev"] : null) >= 1)) {
             echo "\" href=\"/";
             echo twig_escape_filter($this->env, (isset($context["controller"]) ? $context["controller"] : null), "html", null, true);
@@ -28,7 +28,11 @@ class __TwigTemplate_8355a8d4142f5b8fd81b3e51b016e5e78efd63fca3a8fc67bfa945c324f
         } else {
             echo " disabled\"";
         }
-        echo ">
+        echo " data-target=\"";
+        echo twig_escape_filter($this->env, (isset($context["controller"]) ? $context["controller"] : null), "html", null, true);
+        echo "\" data-page=\"";
+        echo twig_escape_filter($this->env, (isset($context["prev"]) ? $context["prev"] : null), "html", null, true);
+        echo "\">
     <span class=\"glyphicon glyphicon-backward\"></span>
 </a>
 
@@ -40,7 +44,9 @@ class __TwigTemplate_8355a8d4142f5b8fd81b3e51b016e5e78efd63fca3a8fc67bfa945c324f
         if (($this->getAttribute((isset($context["pgn"]) ? $context["pgn"] : null), "current_page", array()) == 1)) {
             echo " pgn-current";
         }
-        echo "\">1</a>
+        echo " ajaxable\" data-target=\"";
+        echo twig_escape_filter($this->env, (isset($context["controller"]) ? $context["controller"] : null), "html", null, true);
+        echo "\" data-page=\"1\">1</a>
 
 ";
         // line 11
@@ -62,6 +68,10 @@ class __TwigTemplate_8355a8d4142f5b8fd81b3e51b016e5e78efd63fca3a8fc67bfa945c324f
                     if (($context["i"] == $this->getAttribute((isset($context["pgn"]) ? $context["pgn"] : null), "current_page", array()))) {
                         echo " pgn-current";
                     }
+                    echo " ajaxable\" data-target=\"";
+                    echo twig_escape_filter($this->env, (isset($context["controller"]) ? $context["controller"] : null), "html", null, true);
+                    echo "\" data-page=\"";
+                    echo twig_escape_filter($this->env, $context["i"], "html", null, true);
                     echo "\">";
                     echo twig_escape_filter($this->env, $context["i"], "html", null, true);
                     echo "</a>
@@ -78,7 +88,11 @@ class __TwigTemplate_8355a8d4142f5b8fd81b3e51b016e5e78efd63fca3a8fc67bfa945c324f
                 echo twig_escape_filter($this->env, (isset($context["controller"]) ? $context["controller"] : null), "html", null, true);
                 echo "/?page=";
                 echo twig_escape_filter($this->env, $this->getAttribute((isset($context["pgn"]) ? $context["pgn"] : null), "total_pages", array()), "html", null, true);
-                echo "\" class=\"pgn\">";
+                echo "\" class=\"pgn ajaxable\" data-target=\"";
+                echo twig_escape_filter($this->env, (isset($context["controller"]) ? $context["controller"] : null), "html", null, true);
+                echo "\" data-page=\"";
+                echo twig_escape_filter($this->env, $this->getAttribute((isset($context["pgn"]) ? $context["pgn"] : null), "total_pages", array()), "html", null, true);
+                echo "\">";
                 echo twig_escape_filter($this->env, $this->getAttribute((isset($context["pgn"]) ? $context["pgn"] : null), "total_pages", array()), "html", null, true);
                 echo "</a>
     ";
@@ -100,6 +114,10 @@ class __TwigTemplate_8355a8d4142f5b8fd81b3e51b016e5e78efd63fca3a8fc67bfa945c324f
                     if (($context["i"] == $this->getAttribute((isset($context["pgn"]) ? $context["pgn"] : null), "current_page", array()))) {
                         echo " pgn-current";
                     }
+                    echo " ajaxable\" data-target=\"";
+                    echo twig_escape_filter($this->env, (isset($context["controller"]) ? $context["controller"] : null), "html", null, true);
+                    echo "\" data-page=\"";
+                    echo twig_escape_filter($this->env, $context["i"], "html", null, true);
                     echo "\">";
                     echo twig_escape_filter($this->env, $context["i"], "html", null, true);
                     echo "</a>
@@ -127,6 +145,10 @@ class __TwigTemplate_8355a8d4142f5b8fd81b3e51b016e5e78efd63fca3a8fc67bfa945c324f
                     if (($context["i"] == $this->getAttribute((isset($context["pgn"]) ? $context["pgn"] : null), "current_page", array()))) {
                         echo " pgn-current";
                     }
+                    echo " ajaxable\" data-target=\"";
+                    echo twig_escape_filter($this->env, (isset($context["controller"]) ? $context["controller"] : null), "html", null, true);
+                    echo "\" data-page=\"";
+                    echo twig_escape_filter($this->env, $context["i"], "html", null, true);
                     echo "\">";
                     echo twig_escape_filter($this->env, $context["i"], "html", null, true);
                     echo "</a>
@@ -143,7 +165,11 @@ class __TwigTemplate_8355a8d4142f5b8fd81b3e51b016e5e78efd63fca3a8fc67bfa945c324f
                 echo twig_escape_filter($this->env, (isset($context["controller"]) ? $context["controller"] : null), "html", null, true);
                 echo "/?page=";
                 echo twig_escape_filter($this->env, $this->getAttribute((isset($context["pgn"]) ? $context["pgn"] : null), "total_pages", array()), "html", null, true);
-                echo "\" class=\"pgn\">";
+                echo "\" class=\"pgn ajaxable\" data-target=\"";
+                echo twig_escape_filter($this->env, (isset($context["controller"]) ? $context["controller"] : null), "html", null, true);
+                echo "\" data-page=\"";
+                echo twig_escape_filter($this->env, $this->getAttribute((isset($context["pgn"]) ? $context["pgn"] : null), "total_pages", array()), "html", null, true);
+                echo "\">";
                 echo twig_escape_filter($this->env, $this->getAttribute((isset($context["pgn"]) ? $context["pgn"] : null), "total_pages", array()), "html", null, true);
                 echo "</a>
     ";
@@ -162,6 +188,10 @@ class __TwigTemplate_8355a8d4142f5b8fd81b3e51b016e5e78efd63fca3a8fc67bfa945c324f
                 if (($context["i"] == $this->getAttribute((isset($context["pgn"]) ? $context["pgn"] : null), "current_page", array()))) {
                     echo " pgn-current";
                 }
+                echo " ajaxable\" data-target=\"";
+                echo twig_escape_filter($this->env, (isset($context["controller"]) ? $context["controller"] : null), "html", null, true);
+                echo "\" data-page=\"";
+                echo twig_escape_filter($this->env, $context["i"], "html", null, true);
                 echo "\">";
                 echo twig_escape_filter($this->env, $context["i"], "html", null, true);
                 echo "</a>
@@ -177,7 +207,7 @@ class __TwigTemplate_8355a8d4142f5b8fd81b3e51b016e5e78efd63fca3a8fc67bfa945c324f
         // line 40
         $context["next"] = ($this->getAttribute((isset($context["pgn"]) ? $context["pgn"] : null), "current_page", array()) + 1);
         // line 41
-        echo "<a class=\"next-pgn";
+        echo "<a class=\"next-pgn ajaxable";
         if (((isset($context["next"]) ? $context["next"] : null) <= $this->getAttribute((isset($context["pgn"]) ? $context["pgn"] : null), "total_pages", array()))) {
             echo "\" href=\"/";
             echo twig_escape_filter($this->env, (isset($context["controller"]) ? $context["controller"] : null), "html", null, true);
@@ -187,7 +217,11 @@ class __TwigTemplate_8355a8d4142f5b8fd81b3e51b016e5e78efd63fca3a8fc67bfa945c324f
         } else {
             echo " disabled\"";
         }
-        echo ">
+        echo " data-target=\"";
+        echo twig_escape_filter($this->env, (isset($context["controller"]) ? $context["controller"] : null), "html", null, true);
+        echo "\" data-page=\"";
+        echo twig_escape_filter($this->env, (isset($context["next"]) ? $context["next"] : null), "html", null, true);
+        echo "\">
     <span class=\"glyphicon glyphicon-forward\"></span>
 </a>";
     }
@@ -204,7 +238,7 @@ class __TwigTemplate_8355a8d4142f5b8fd81b3e51b016e5e78efd63fca3a8fc67bfa945c324f
 
     public function getDebugInfo()
     {
-        return array (  180 => 41,  178 => 40,  175 => 38,  157 => 35,  153 => 34,  142 => 31,  139 => 29,  122 => 27,  118 => 26,  115 => 25,  112 => 24,  95 => 22,  91 => 21,  88 => 20,  86 => 19,  77 => 18,  74 => 16,  57 => 14,  52 => 13,  49 => 12,  47 => 11,  37 => 8,  21 => 3,  19 => 2,);
+        return array (  210 => 41,  208 => 40,  205 => 38,  183 => 35,  179 => 34,  164 => 31,  161 => 29,  140 => 27,  136 => 26,  133 => 25,  130 => 24,  109 => 22,  105 => 21,  102 => 20,  100 => 19,  87 => 18,  84 => 16,  63 => 14,  58 => 13,  55 => 12,  53 => 11,  41 => 8,  21 => 3,  19 => 2,);
     }
 
     public function getSource()
