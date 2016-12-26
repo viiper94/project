@@ -35,17 +35,17 @@ class __TwigTemplate_46549de837a1d71bec58dbec2657e6021db39bc0b200be7b6b672bd66bd
         echo twig_escape_filter($this->env, $this->getAttribute((isset($context["artist"]) ? $context["artist"] : null), "artist_picture", array()), "html", null, true);
         echo "\">
 \t</figure>
-\t<article>
+\t<article class=\"description\">
 \t\t<span>";
         // line 8
         echo $this->getAttribute((isset($context["artist"]) ? $context["artist"] : null), "artist_bio", array());
         echo "</span>
 \t</article>
 \t<div class=\"sharers\">
-\t\t<a href=\"#\" class=\"share-fb\"></a>
-\t\t<a href=\"#\" class=\"share-twitter\"></a>
-\t\t<a href=\"#\" class=\"share-vk\"></a>
-\t\t<a href=\"#\" class=\"share-mail\"></a>
+\t\t<a class=\"share-fb\" id=\"fb\"></a>
+\t\t<a class=\"share-twitter\" id=\"twitter\"></a>
+\t\t<a class=\"share-vk\" id=\"vk\"></a>
+\t\t<a class=\"share-mail\" id=\"mail\"></a>
 \t</div>
     ";
         // line 16

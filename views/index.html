@@ -136,7 +136,7 @@
         <div class="clearfix"></div>
     </script>
     <script type="text/html" id="releases-list-template">
-        <% releases.forEach(function(item) { %>
+        <% _.each(releases, function(item){ %>
         <div class="item" style="background-image: url(/images/releases/<%=item.release_cover%>);">
             <a href="/releases/<%=item.releases_id%>" data-id="<%=item.releases_id%>" data-target="releases" class="ajaxable">
                 <div class="overlay">

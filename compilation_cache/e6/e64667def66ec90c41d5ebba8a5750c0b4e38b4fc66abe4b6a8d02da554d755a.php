@@ -172,8 +172,9 @@ class __TwigTemplate_92fb9ebce491a51cca6b58f545dce0792b2104bd1f2a946f2aa85387369
             $_parent = $context['_parent'];
             unset($context['_seq'], $context['_iterated'], $context['_key'], $context['artist'], $context['_parent'], $context['loop']);
             $context = array_intersect_key($context, $_parent) + $_parent;
-            // line 62
-            echo "<div class=\"clearfix\"></div>
+        } else {
+            // line 63
+            echo "<h1>Нічого не знайдено</h1>
 ";
         }
     }
@@ -190,7 +191,7 @@ class __TwigTemplate_92fb9ebce491a51cca6b58f545dce0792b2104bd1f2a946f2aa85387369
 
     public function getDebugInfo()
     {
-        return array (  176 => 62,  164 => 56,  158 => 53,  153 => 52,  149 => 51,  146 => 50,  144 => 49,  140 => 47,  128 => 41,  124 => 40,  118 => 37,  113 => 36,  109 => 35,  97 => 29,  93 => 28,  87 => 25,  82 => 24,  78 => 23,  75 => 22,  73 => 21,  69 => 19,  57 => 13,  51 => 10,  45 => 7,  40 => 6,  36 => 5,  33 => 4,  31 => 3,  28 => 2,  11 => 1,);
+        return array (  177 => 63,  164 => 56,  158 => 53,  153 => 52,  149 => 51,  146 => 50,  144 => 49,  140 => 47,  128 => 41,  124 => 40,  118 => 37,  113 => 36,  109 => 35,  97 => 29,  93 => 28,  87 => 25,  82 => 24,  78 => 23,  75 => 22,  73 => 21,  69 => 19,  57 => 13,  51 => 10,  45 => 7,  40 => 6,  36 => 5,  33 => 4,  31 => 3,  28 => 2,  11 => 1,);
     }
 
     public function getSource()

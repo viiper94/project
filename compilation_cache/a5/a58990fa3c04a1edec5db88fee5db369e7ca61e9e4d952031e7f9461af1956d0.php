@@ -200,7 +200,8 @@ class __TwigTemplate_159eb1db8d163257ac7f8d15e32dbb495f6d83eca144413f62d0c49e480
         <div class=\"clearfix\"></div>
     </script>
     <script type=\"text/html\" id=\"releases-list-template\">
-        <% releases.forEach(function(item) { %>
+        <% console.log('Logging from template '+releases) %>
+        <% _.each(releases, function(item){ %>
         <div class=\"item\" style=\"background-image: url(/images/releases/<%=item.release_cover%>);\">
             <a href=\"/releases/<%=item.releases_id%>\" data-id=\"<%=item.releases_id%>\" data-target=\"releases\" class=\"ajaxable\">
                 <div class=\"overlay\">
@@ -276,14 +277,15 @@ class __TwigTemplate_159eb1db8d163257ac7f8d15e32dbb495f6d83eca144413f62d0c49e480
     <script type=\"text/html\" id=\"news-template\">
         <div class=\"news-container\">
             <h2><%=item.news_title%></h2>
-            <article>
+            <article class=\"description\">
                 <span><%=item.news_article%></span>
             </article>
             <div class=\"sharers\">
-                <a href=\"#\" class=\"share-fb\"></a>
-                <a href=\"#\" class=\"share-twitter\"></a>
-                <a href=\"#\" class=\"share-vk\"></a>
-                <a href=\"#\" class=\"share-mail\"></a>
+                <p>Share:</p>
+                <a class=\"share-fb\" id=\"fb\"></a>
+                <a class=\"share-twitter\" id=\"twitter\"></a>
+                <a class=\"share-vk\" id=\"vk\"></a>
+                <a class=\"share-mail\" id=\"mail\"></a>
             </div>
             <% if(\$(related).length > 0){ %>
             <div class=\"related\">
@@ -324,10 +326,10 @@ class __TwigTemplate_159eb1db8d163257ac7f8d15e32dbb495f6d83eca144413f62d0c49e480
                 </div>
                 <div class=\"sharers\">
                     <p>Share:</p>
-                    <a href=\"#\" class=\"share-fb\"></a>
-                    <a href=\"#\" class=\"share-twitter\"></a>
-                    <a href=\"#\" class=\"share-vk\"></a>
-                    <a href=\"#\" class=\"share-mail\"></a>
+                    <a class=\"share-fb\" id=\"fb\"></a>
+                    <a class=\"share-twitter\" id=\"twitter\"></a>
+                    <a class=\"share-vk\" id=\"vk\"></a>
+                    <a class=\"share-mail\" id=\"mail\"></a>
                 </div>
             </div>
             <div class=\"right pull-right\">
@@ -336,9 +338,9 @@ class __TwigTemplate_159eb1db8d163257ac7f8d15e32dbb495f6d83eca144413f62d0c49e480
                     <span>Шукати реліз</span>
                     <a <% if(next != undefined){ %>data-target=\"releases\" data-id=\"<%=next.releases_id%>\" href=\"/releases/<%=next.releases_id%>\"<% } %> class=\"glyphicon glyphicon-menu-right<% if(next == undefined){ %> disabled<% } %><% if(next != undefined){ %> ajaxable<% } %>\"></a>
                 </div>
-                <div class=\"release-description\">
+                <article class=\"release-description description\">
                     <%=item.release_description%>
-                </div>
+                </article>
                 <div class=\"release-tracklist\">
                     <h3>Трекліст:</h3>
                     <%=item.release_tracklist%>
@@ -369,14 +371,15 @@ class __TwigTemplate_159eb1db8d163257ac7f8d15e32dbb495f6d83eca144413f62d0c49e480
             <figure>
                 <img src=\"/images/artists/<%=artist.artist_picture%>\">
             </figure>
-            <article>
+            <article class=\"description\">
                 <span><%=artist.artist_bio%></span>
             </article>
             <div class=\"sharers\">
-                <a href=\"#\" class=\"share-fb\"></a>
-                <a href=\"#\" class=\"share-twitter\"></a>
-                <a href=\"#\" class=\"share-vk\"></a>
-                <a href=\"#\" class=\"share-mail\"></a>
+                <p>Share:</p>
+                <a class=\"share-fb\" id=\"fb\"></a>
+                <a class=\"share-twitter\" id=\"twitter\"></a>
+                <a class=\"share-vk\" id=\"vk\"></a>
+                <a class=\"share-mail\" id=\"mail\"></a>
             </div>
             <% if(\$(related).length > 0){ %>
             <div class=\"related\">
@@ -427,7 +430,7 @@ class __TwigTemplate_159eb1db8d163257ac7f8d15e32dbb495f6d83eca144413f62d0c49e480
 
     public function getDebugInfo()
     {
-        return array (  414 => 53,  411 => 52,  119 => 55,  117 => 52,  99 => 39,  93 => 38,  80 => 30,  74 => 29,  68 => 28,  62 => 27,  41 => 13,  30 => 9,  20 => 1,);
+        return array (  417 => 53,  414 => 52,  119 => 55,  117 => 52,  99 => 39,  93 => 38,  80 => 30,  74 => 29,  68 => 28,  62 => 27,  41 => 13,  30 => 9,  20 => 1,);
     }
 
     public function getSource()
