@@ -156,6 +156,7 @@ $(document).ready(function(){
                             scrollTop: $(data.hash).offset().top
                         }, 800);
                     }
+                    // $('.navbar-toggle').click();
                 }else{
                     alert(response.status);
                 }

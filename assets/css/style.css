@@ -88,6 +88,7 @@ article{padding: 10px 0; text-align: justify;}
 .search-header{color: #989898;}
 
 /* about page */
+.page-container{ color: #fff; margin: 0 auto;}
 .about{margin-top: 20px; color: #89898b; text-transform: uppercase; font-size: 16px;}
 .popup a{color: #fff; text-decoration: underline;}
 .popup-form{margin: 0 10px 10px 0; background-color: #373737; border-radius: 0; border: 1px solid #252525; 
@@ -130,14 +131,11 @@ article{padding: 10px 0; text-align: justify;}
 .pgn-current{font-weight: bold;}
 
 /* school */
-.school-header{padding-top: 70px; color: #989898;}
+.school-header{padding-top: 70px; color: #989898; padding-bottom: 20px; text-align: center;}
 .equipment h4{color: #d20023;}
 .school-list li{margin-top: 10px;}
-.prices div{margin-top: 30px; opacity: 0.7; transition: 0.2s opacity;}
+.prices div{margin-top: 30px; opacity: 0.7; transition: 0.2s opacity; text-align: center;}
 .prices div:hover{opacity: 1;}
-.prices div:nth-child(3n+2){padding-left: 0;}
-.prices div:nth-child(3n+3){text-align: center;}
-.prices div:nth-child(3n+4){text-align: right;}
 
 /* footer */
 footer{min-height: 150px; margin: 0 auto; color: #fff; padding: 30px 15px; border-top: solid #fff 1px;}
@@ -195,6 +193,7 @@ footer{min-height: 150px; margin: 0 auto; color: #fff; padding: 30px 15px; borde
     .links{display: block; float: none; margin: 10px 0 0 10px;}
 
     /* about */
+	.page-container{ width: 95%;}
 	.popup-form{display: block; width: 100%;}
 	input[type=text], input[type=email]{max-width: 100%;}
 
@@ -230,7 +229,7 @@ footer{min-height: 150px; margin: 0 auto; color: #fff; padding: 30px 15px; borde
 	.release-container{width: 95%;}
 
     /* footer */
-	footer{width: 680px;}
+	footer, .page-container{width: 680px;}
 }
 
 /* md */
@@ -250,15 +249,15 @@ footer{min-height: 150px; margin: 0 auto; color: #fff; padding: 30px 15px; borde
     /* release */
 	.release-container{width: 95%;}
 
+    /* about */
+	.page-container{ width:860px;}
+
 	/* footer */
 	footer{width: 860px;}
 }
 
 /* lg */
 @media (min-width: 1200px) {
-	/* header */
-	header{}
-
 	/* footer */
-	footer{width: 1026px;}
+	footer, .page-container{width: 1026px;}
 }

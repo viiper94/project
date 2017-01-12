@@ -200,7 +200,6 @@ class __TwigTemplate_159eb1db8d163257ac7f8d15e32dbb495f6d83eca144413f62d0c49e480
         <div class=\"clearfix\"></div>
     </script>
     <script type=\"text/html\" id=\"releases-list-template\">
-        <% console.log('Logging from template '+releases) %>
         <% _.each(releases, function(item){ %>
         <div class=\"item\" style=\"background-image: url(/images/releases/<%=item.release_cover%>);\">
             <a href=\"/releases/<%=item.releases_id%>\" data-id=\"<%=item.releases_id%>\" data-target=\"releases\" class=\"ajaxable\">
@@ -260,13 +259,11 @@ class __TwigTemplate_159eb1db8d163257ac7f8d15e32dbb495f6d83eca144413f62d0c49e480
         <% if(newsTemplate != undefined){ %>
             <h3 class=\"search-header\">Знайдені новини:</h3>
             <%=newsTemplate%>
-        <% } %>
-        <% if(releasesTemplate != undefined){ %>
+        <% }else if(releasesTemplate != undefined){ %>
             <h3 class=\"search-header\">Знайдені релізи:</h3>
             <%=releasesTemplate%>
             <div class=\"clearfix\"></div>
-        <% } %>
-        <% if(artistsTemplate != undefined){ %>
+        <% }else if(artistsTemplate != undefined){ %>
             <h3 class=\"search-header\">Знайдені артисти:</h3>
             <%=artistsTemplate%>
             <div class=\"clearfix\"></div>
@@ -430,7 +427,7 @@ class __TwigTemplate_159eb1db8d163257ac7f8d15e32dbb495f6d83eca144413f62d0c49e480
 
     public function getDebugInfo()
     {
-        return array (  417 => 53,  414 => 52,  119 => 55,  117 => 52,  99 => 39,  93 => 38,  80 => 30,  74 => 29,  68 => 28,  62 => 27,  41 => 13,  30 => 9,  20 => 1,);
+        return array (  414 => 53,  411 => 52,  119 => 55,  117 => 52,  99 => 39,  93 => 38,  80 => 30,  74 => 29,  68 => 28,  62 => 27,  41 => 13,  30 => 9,  20 => 1,);
     }
 
     public function getSource()

@@ -195,13 +195,11 @@
         <% if(newsTemplate != undefined){ %>
             <h3 class="search-header">Знайдені новини:</h3>
             <%=newsTemplate%>
-        <% } %>
-        <% if(releasesTemplate != undefined){ %>
+        <% }else if(releasesTemplate != undefined){ %>
             <h3 class="search-header">Знайдені релізи:</h3>
             <%=releasesTemplate%>
             <div class="clearfix"></div>
-        <% } %>
-        <% if(artistsTemplate != undefined){ %>
+        <% }else if(artistsTemplate != undefined){ %>
             <h3 class="search-header">Знайдені артисти:</h3>
             <%=artistsTemplate%>
             <div class="clearfix"></div>
